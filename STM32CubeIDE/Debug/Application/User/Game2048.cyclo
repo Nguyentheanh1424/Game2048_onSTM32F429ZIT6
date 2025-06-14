@@ -1,0 +1,9 @@
+../Application/User/Game2048.c:63:13:compressAndMergeRowLeft	10
+../Application/User/Game2048.c:23:5:fakeRand	1
+../Application/User/Game2048.c:111:6:moveLeft	2
+../Application/User/Game2048.c:124:6:moveRight	2
+../Application/User/Game2048.c:146:6:moveUp	2
+../Application/User/Game2048.c:166:6:moveDown	2
+../Application/User/Game2048.c:186:6:spawnRandomTile	5
+../Application/User/Game2048.c:29:6:initGame	2
+../Application/User/Game2048.c:44:6:handleInputDirection	6

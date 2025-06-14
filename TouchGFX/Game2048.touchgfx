@@ -1,0 +1,688 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "GameScreen",
+        "Components": [
+          {
+            "Type": "ScalableImage",
+            "Name": "Background",
+            "Width": 240,
+            "Height": 320,
+            "Filename": "background.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "Square",
+            "X": 20,
+            "Y": 50,
+            "Width": 200,
+            "Height": 200,
+            "CustomContainerDefinitionName": "SquareContainer"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "Logo",
+            "X": 16,
+            "Y": 5,
+            "Width": 100,
+            "Height": 40,
+            "Filename": "logo.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ScalableImage",
+            "Name": "title",
+            "X": 20,
+            "Y": 263,
+            "Width": 200,
+            "Height": 40,
+            "Filename": "title.png",
+            "ScalingAlgorithm": "Nearest-neighbor"
+          },
+          {
+            "Type": "ButtonWithIcon",
+            "Name": "buttonWithIcon1",
+            "X": 165,
+            "Y": 261,
+            "Width": 55,
+            "Height": 19,
+            "Pressed": "newgamebtn.png",
+            "Released": "newgamebtn.png",
+            "IconPressed": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconReleased": "__generated\\icon_theme_images_action_done_50_50_E8F6FB.svg.png",
+            "IconX": 97,
+            "IconHeight": 50,
+            "IconWidth": 50
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "SquareContainer",
+        "Width": 200,
+        "Height": 200,
+        "Includes": "",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "Background4x4",
+            "Width": 200,
+            "Height": 200,
+            "Color": {
+              "Red": 187,
+              "Green": 173,
+              "Blue": 160
+            }
+          },
+          {
+            "Type": "Container",
+            "Name": "Tile33",
+            "X": 151,
+            "Y": 151,
+            "Width": 45,
+            "Height": 45,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "Background_33",
+                "Width": 45,
+                "Height": 45,
+                "Color": {
+                  "Red": 205,
+                  "Green": 193,
+                  "Blue": 180
+                },
+                "Moveable": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Text_33",
+                "Y": 15,
+                "Width": 45,
+                "Height": 15,
+                "TextId": "tile33",
+                "TextRotation": "0",
+                "Wildcard1": {},
+                "WideTextAction": 6,
+                "Fadeable": true
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Tile32",
+            "X": 102,
+            "Y": 151,
+            "Width": 45,
+            "Height": 45,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "Background_32",
+                "Width": 45,
+                "Height": 45,
+                "Color": {
+                  "Red": 205,
+                  "Green": 193,
+                  "Blue": 180
+                },
+                "Moveable": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Text_32",
+                "Y": 15,
+                "Width": 45,
+                "Height": 15,
+                "TextId": "tile32",
+                "TextRotation": "0",
+                "Wildcard1": {},
+                "WideTextAction": 6,
+                "Fadeable": true
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Tile31",
+            "X": 53,
+            "Y": 151,
+            "Width": 45,
+            "Height": 45,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "Background_31",
+                "Width": 45,
+                "Height": 45,
+                "Color": {
+                  "Red": 205,
+                  "Green": 193,
+                  "Blue": 180
+                },
+                "Moveable": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Text_31",
+                "Y": 15,
+                "Width": 45,
+                "Height": 15,
+                "TextId": "tile31",
+                "TextRotation": "0",
+                "Wildcard1": {},
+                "WideTextAction": 6,
+                "Fadeable": true
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Tile30",
+            "X": 4,
+            "Y": 151,
+            "Width": 45,
+            "Height": 45,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "Background_30",
+                "Width": 45,
+                "Height": 45,
+                "Color": {
+                  "Red": 205,
+                  "Green": 193,
+                  "Blue": 180
+                },
+                "Moveable": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Text_30",
+                "Y": 15,
+                "Width": 45,
+                "Height": 15,
+                "TextId": "tile30",
+                "TextRotation": "0",
+                "Wildcard1": {},
+                "WideTextAction": 6,
+                "Fadeable": true
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Tile23",
+            "X": 151,
+            "Y": 102,
+            "Width": 45,
+            "Height": 45,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "Background_23",
+                "Width": 45,
+                "Height": 45,
+                "Color": {
+                  "Red": 205,
+                  "Green": 193,
+                  "Blue": 180
+                },
+                "Moveable": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Text_23",
+                "Y": 15,
+                "Width": 45,
+                "Height": 15,
+                "TextId": "tile23",
+                "TextRotation": "0",
+                "Wildcard1": {},
+                "WideTextAction": 6,
+                "Fadeable": true
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Tile22",
+            "X": 102,
+            "Y": 102,
+            "Width": 45,
+            "Height": 45,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "Background_22",
+                "Width": 45,
+                "Height": 45,
+                "Color": {
+                  "Red": 205,
+                  "Green": 193,
+                  "Blue": 180
+                },
+                "Moveable": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Text_22",
+                "Y": 15,
+                "Width": 45,
+                "Height": 15,
+                "TextId": "tile22",
+                "TextRotation": "0",
+                "Wildcard1": {},
+                "WideTextAction": 6,
+                "Fadeable": true
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Tile21",
+            "X": 53,
+            "Y": 102,
+            "Width": 45,
+            "Height": 45,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "Background_21",
+                "Width": 45,
+                "Height": 45,
+                "Color": {
+                  "Red": 205,
+                  "Green": 193,
+                  "Blue": 180
+                },
+                "Moveable": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Text_21",
+                "Y": 15,
+                "Width": 45,
+                "Height": 15,
+                "TextId": "tile21",
+                "TextRotation": "0",
+                "Wildcard1": {},
+                "WideTextAction": 6,
+                "Fadeable": true
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Tile20",
+            "X": 5,
+            "Y": 102,
+            "Width": 45,
+            "Height": 45,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "Background_20",
+                "Width": 45,
+                "Height": 45,
+                "Color": {
+                  "Red": 205,
+                  "Green": 193,
+                  "Blue": 180
+                },
+                "Moveable": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Text_20",
+                "Y": 15,
+                "Width": 45,
+                "Height": 15,
+                "TextId": "tile20",
+                "TextRotation": "0",
+                "Wildcard1": {},
+                "WideTextAction": 6,
+                "Fadeable": true
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Tile13",
+            "X": 151,
+            "Y": 53,
+            "Width": 45,
+            "Height": 45,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "Background_13",
+                "Width": 45,
+                "Height": 45,
+                "Color": {
+                  "Red": 205,
+                  "Green": 193,
+                  "Blue": 180
+                },
+                "Moveable": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Text_13",
+                "Y": 15,
+                "Width": 45,
+                "Height": 15,
+                "TextId": "tile13",
+                "TextRotation": "0",
+                "Wildcard1": {},
+                "WideTextAction": 6,
+                "Fadeable": true
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Tile12",
+            "X": 102,
+            "Y": 53,
+            "Width": 45,
+            "Height": 45,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "Background_12",
+                "Width": 45,
+                "Height": 45,
+                "Color": {
+                  "Red": 205,
+                  "Green": 193,
+                  "Blue": 180
+                },
+                "Moveable": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Text_12",
+                "Y": 15,
+                "Width": 45,
+                "Height": 15,
+                "TextId": "tile12",
+                "TextRotation": "0",
+                "Wildcard1": {},
+                "WideTextAction": 6,
+                "Fadeable": true
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Tile11",
+            "X": 53,
+            "Y": 53,
+            "Width": 45,
+            "Height": 45,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "Background_11",
+                "Width": 45,
+                "Height": 45,
+                "Color": {
+                  "Red": 205,
+                  "Green": 193,
+                  "Blue": 180
+                },
+                "Moveable": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Text_11",
+                "Y": 15,
+                "Width": 45,
+                "Height": 15,
+                "TextId": "tile11",
+                "TextRotation": "0",
+                "Wildcard1": {},
+                "WideTextAction": 6,
+                "Fadeable": true
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Tile10",
+            "X": 4,
+            "Y": 53,
+            "Width": 45,
+            "Height": 45,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "Background_10",
+                "Width": 45,
+                "Height": 45,
+                "Color": {
+                  "Red": 205,
+                  "Green": 193,
+                  "Blue": 180
+                },
+                "Moveable": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Text_10",
+                "Y": 15,
+                "Width": 45,
+                "Height": 15,
+                "TextId": "tile10",
+                "TextRotation": "0",
+                "Wildcard1": {},
+                "WideTextAction": 6,
+                "Fadeable": true
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Tile03",
+            "X": 151,
+            "Y": 4,
+            "Width": 45,
+            "Height": 45,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "Background_03",
+                "Width": 45,
+                "Height": 45,
+                "Color": {
+                  "Red": 205,
+                  "Green": 193,
+                  "Blue": 180
+                },
+                "Moveable": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Text_03",
+                "Y": 15,
+                "Width": 45,
+                "Height": 15,
+                "TextId": "tile03",
+                "TextRotation": "0",
+                "Wildcard1": {},
+                "WideTextAction": 6,
+                "Fadeable": true
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Tile02",
+            "X": 102,
+            "Y": 4,
+            "Width": 45,
+            "Height": 45,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "Background_02",
+                "Width": 45,
+                "Height": 45,
+                "Color": {
+                  "Red": 205,
+                  "Green": 193,
+                  "Blue": 180
+                },
+                "Moveable": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Text_02",
+                "Y": 15,
+                "Width": 45,
+                "Height": 15,
+                "TextId": "tile02",
+                "TextRotation": "0",
+                "Wildcard1": {},
+                "WideTextAction": 6,
+                "Fadeable": true
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Tile01",
+            "X": 53,
+            "Y": 4,
+            "Width": 45,
+            "Height": 45,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "Background_01",
+                "Width": 45,
+                "Height": 45,
+                "Color": {
+                  "Red": 205,
+                  "Green": 193,
+                  "Blue": 180
+                },
+                "Moveable": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Text_01",
+                "Y": 15,
+                "Width": 45,
+                "Height": 15,
+                "TextId": "tile01",
+                "TextRotation": "0",
+                "Wildcard1": {},
+                "WideTextAction": 6,
+                "Fadeable": true
+              }
+            ]
+          },
+          {
+            "Type": "Container",
+            "Name": "Tile00",
+            "X": 4,
+            "Y": 4,
+            "Width": 45,
+            "Height": 45,
+            "Components": [
+              {
+                "Type": "Box",
+                "Name": "Background_00",
+                "Width": 45,
+                "Height": 45,
+                "Color": {
+                  "Red": 205,
+                  "Green": 193,
+                  "Blue": 180
+                },
+                "Moveable": true
+              },
+              {
+                "Type": "TextArea",
+                "Name": "Text_00",
+                "Y": 15,
+                "Width": 45,
+                "Height": 15,
+                "TextId": "tile02",
+                "TextRotation": "0",
+                "Wildcard1": {},
+                "WideTextAction": 6,
+                "Fadeable": true
+              }
+            ]
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "Name": "Game2048",
+    "Resolution": {
+      "Width": 240,
+      "Height": 320
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "GameScreen",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 240,
+        "Height": 320
+      }
+    ],
+    "PhysicalButtons": [],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "CompileTargetCommandOverride": "make -f ../gcc/Makefile -j8",
+    "FlashTargetCommandOverride": "make -f ../gcc/Makefile flash",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Portrait",
+    "Family": "STM32F4",
+    "SubFamily": "STM32F429/439",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m4",
+    "ProjectFile": "../STM32F429I_DISCO_REV_D01.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": [
+      "CWRVector",
+      "VectorFonts"
+    ]
+  },
+  "Version": "4.25.0",
+  "CreatedBy": "4.25.0"
+}

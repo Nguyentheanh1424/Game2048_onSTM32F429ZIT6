@@ -1,0 +1,8 @@
+../Application/User/Game2048.c:53:13:compressAndMergeRowLeft	56	static
+../Application/User/Game2048.c:101:6:moveLeft	16	static
+../Application/User/Game2048.c:114:6:moveRight	32	static
+../Application/User/Game2048.c:136:6:moveUp	32	static
+../Application/User/Game2048.c:156:6:moveDown	32	static
+../Application/User/Game2048.c:176:6:spawnRandomTile	152	static
+../Application/User/Game2048.c:22:6:initGame	8	static
+../Application/User/Game2048.c:34:6:handleInputDirection	8	static
