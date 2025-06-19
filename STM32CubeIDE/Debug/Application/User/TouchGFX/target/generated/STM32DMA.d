@@ -36,6 +36,7 @@ Application/User/TouchGFX/target/generated/STM32DMA.o: \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../../TouchGFX/target/generated/STM32DMA.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Bitmap.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \
@@ -103,6 +104,7 @@ Application/User/TouchGFX/target/generated/STM32DMA.o: \
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
+../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 ../../TouchGFX/target/generated/STM32DMA.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Bitmap.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp:

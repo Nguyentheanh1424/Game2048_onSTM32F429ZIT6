@@ -68,18 +68,18 @@ void Error_Handler(void);
 #define MCU_ACTIVE_GPIO_Port GPIOE
 #define SPI5_NCS_Pin GPIO_PIN_1
 #define SPI5_NCS_GPIO_Port GPIOC
+#define UP_Pin GPIO_PIN_1
+#define UP_GPIO_Port GPIOA
+#define UP_EXTI_IRQn EXTI1_IRQn
+#define DOWN_Pin GPIO_PIN_2
+#define DOWN_GPIO_Port GPIOA
+#define DOWN_EXTI_IRQn EXTI2_IRQn
 #define LEFT_Pin GPIO_PIN_12
 #define LEFT_GPIO_Port GPIOB
 #define LEFT_EXTI_IRQn EXTI15_10_IRQn
 #define RIGHT_Pin GPIO_PIN_13
 #define RIGHT_GPIO_Port GPIOB
 #define RIGHT_EXTI_IRQn EXTI15_10_IRQn
-#define UP_Pin GPIO_PIN_9
-#define UP_GPIO_Port GPIOA
-#define UP_EXTI_IRQn EXTI9_5_IRQn
-#define DOWN_Pin GPIO_PIN_10
-#define DOWN_GPIO_Port GPIOA
-#define DOWN_EXTI_IRQn EXTI15_10_IRQn
 
 /* USER CODE BEGIN Private defines */
 

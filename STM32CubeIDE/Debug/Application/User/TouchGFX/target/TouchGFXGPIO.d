@@ -37,6 +37,7 @@ Application/User/TouchGFX/target/TouchGFXGPIO.o: \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
+ ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../../Core/Inc/main.h
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/GPIO.hpp:
 ../../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
@@ -75,4 +76,5 @@ Application/User/TouchGFX/target/TouchGFXGPIO.o: \
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
+../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 ../../Core/Inc/main.h:
