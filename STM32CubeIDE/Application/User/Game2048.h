@@ -28,11 +28,6 @@ bool canMerge(int board[BOARD_SIZE][BOARD_SIZE]);
 void SaveBestScore(int score);
 int LoadBestScore(void);
 
-void debugPrintBoard(int board[BOARD_SIZE][BOARD_SIZE]);
-void debugPrintString(const char* str);
-void debugPrintNumber(int num);
-void debugPrintGameState(int state);
-
 int (*getGameBoard(void))[BOARD_SIZE];
 
 #endif /* APPLICATION_USER_GAME2048_H_ */

@@ -16,6 +16,7 @@
 #define BOARD_SIZE 4
 #define BEST_SCORE_BKP_REG RTC_BKP_DR0
 
+bool flagContinue = false;
 int gameBoard[BOARD_SIZE][BOARD_SIZE] = {0};
 int currentGameState = GAME_PLAYING;
 int score = 0;
@@ -34,10 +35,6 @@ void initRandom(void)
     randSeed ^= (uint32_t)&randSeed;
 
     if (randSeed == 0) randSeed = 1;
-
-    debugPrintString("Random seed initialized: ");
-    debugPrintNumber(randSeed);
-    debugPrintString("\r\n");
 }
 
 uint32_t customRand(void)
@@ -52,65 +49,8 @@ int betterRand(void)
     return (int)(customRand() % 10);
 }
 
-// Debug functions for STM32 UART1
-void debugPrintString(const char* str)
-{
-    HAL_UART_Transmit(&huart1, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
-}
-
-void debugPrintNumber(int num)
-{
-    char buffer[16];
-    sprintf(buffer, "%d", num);
-    debugPrintString(buffer);
-}
-
-void debugPrintGameState(int state)
-{
-    switch(state)
-    {
-        case GAME_PLAYING:
-            debugPrintString("State: PLAYING\r\n");
-            break;
-        case GAME_WON:
-            debugPrintString("State: WON\r\n");
-            break;
-        case GAME_OVER:
-            debugPrintString("State: GAME_OVER\r\n");
-            break;
-        default:
-            debugPrintString("State: UNKNOWN\r\n");
-            break;
-    }
-}
-
-void debugPrintBoard(int board[BOARD_SIZE][BOARD_SIZE])
-{
-    debugPrintString("\r\n=== GAME BOARD ===\r\n");
-    for (int i = 0; i < BOARD_SIZE; i++)
-    {
-        debugPrintString("| ");
-        for (int j = 0; j < BOARD_SIZE; j++)
-        {
-            if (board[i][j] == 0)
-                debugPrintString("   0");
-            else
-            {
-                char buffer[8];
-                sprintf(buffer, "%4d", board[i][j]);
-                debugPrintString(buffer);
-            }
-            debugPrintString(" | ");
-        }
-        debugPrintString("\r\n");
-    }
-    debugPrintString("==================\r\n");
-}
-
 void initGame(void)
 {
-    debugPrintString("\r\n*** INIT GAME 2048 ***\r\n");
-
     score = 0;
 
     initRandom();
@@ -121,39 +61,16 @@ void initGame(void)
             gameBoard[i][j] = 0;
 
     currentGameState = GAME_PLAYING;
-    debugPrintGameState(currentGameState);
 
-    debugPrintString("Spawning initial tiles...\r\n");
     spawnRandomTile(gameBoard);
     spawnRandomTile(gameBoard);
-
-    debugPrintBoard(gameBoard);
-
-    debugPrintString("Game initialized successfully!\r\n");
 }
 
 void handleInputDirection(int direction)
 {
-    debugPrintString("\r\n--- HANDLE INPUT ---\r\n");
-    debugPrintString("Direction: ");
-
-    switch(direction)
-    {
-        case 0: debugPrintString("LEFT\r\n"); break;
-        case 1: debugPrintString("RIGHT\r\n"); break;
-        case 2: debugPrintString("UP\r\n"); break;
-        case 3: debugPrintString("DOWN\r\n"); break;
-        default: debugPrintString("INVALID\r\n"); return;
-    }
-
     // Don't allow moves if game is over
     if (currentGameState == GAME_OVER) {
-        debugPrintString("ERROR: Game Over! No more moves possible.\r\n");
         return;
-    }
-
-    if (currentGameState == GAME_WON) {
-        debugPrintString("INFO: You won! Continue playing...\r\n");
     }
 
     bool moved = false;
@@ -168,75 +85,48 @@ void handleInputDirection(int direction)
 
     if (moved)
     {
-        debugPrintString("Move successful! Spawning new tile...\r\n");
         spawnRandomTile(gameBoard);
 
         // Check win condition
         if (currentGameState == GAME_PLAYING && checkWin(gameBoard)) {
             currentGameState = GAME_WON;
-            debugPrintString("*** CONGRATULATIONS! YOU REACHED 2048! ***\r\n");
         }
 
         // Check game over condition
         if (checkGameOver(gameBoard)) {
             currentGameState = GAME_OVER;
-            debugPrintString("*** GAME OVER! NO MORE MOVES POSSIBLE ***\r\n");
         }
-
-        debugPrintGameState(currentGameState);
-        debugPrintBoard(gameBoard);
-    }
-    else
-    {
-        debugPrintString("Move failed! No tiles moved.\r\n");
     }
 }
 
 static bool compressAndMergeRowLeft(int row[BOARD_SIZE])
 {
     bool moved = false;
-    int temp[BOARD_SIZE] = {0};
-    int idx = 0;
+    int last = 0, insertPos = 0;
 
-    // Step 1: Shift to the left
-    for (int i = 0; i < BOARD_SIZE; i++)
-    {
-        if (row[i] != 0)
-        {
-            temp[idx++] = row[i];
-        }
-    }
+    for (int i = 0; i < BOARD_SIZE; i++) {
+        if (row[i] == 0) continue;
 
-    // Step 2: Merge the same numbers
-    for (int i = 0; i < BOARD_SIZE - 1; i++)
-    {
-        if (temp[i] != 0 && temp[i] == temp[i + 1])
-        {
-            temp[i] *= 2;
-            score += temp[i];
-            temp[i + 1] = 0;
+        if (last == 0) {
+            last = row[i];
+        } else if (last == row[i]) {
+            row[insertPos++] = last * 2;
+            score += last * 2;
+            last = 0;
             moved = true;
+        } else {
+            row[insertPos++] = last;
+            last = row[i];
         }
+        if (i != insertPos) moved = true;
     }
 
-    // Step 3: Shift again after merging
-    int final[BOARD_SIZE] = {0};
-    idx = 0;
-    for (int i = 0; i < BOARD_SIZE; i++)
-    {
-        if (temp[i] != 0)
-            final[idx++] = temp[i];
+    if (last != 0) {
+        row[insertPos++] = last;
     }
 
-    // Step 4: Check if any changes were made
-    for (int i = 0; i < BOARD_SIZE; i++)
-    {
-        if (row[i] != final[i])
-        {
-            moved = true;
-            row[i] = final[i];
-        }
-    }
+    // Fill remaining with 0
+    while (insertPos < BOARD_SIZE) row[insertPos++] = 0;
 
     return moved;
 }
@@ -348,19 +238,6 @@ void spawnRandomTile(int board[BOARD_SIZE][BOARD_SIZE])
         uint32_t randValue = customRand() % 100;
         board[i][j] = (randValue < 90) ? 2 : 4;
         shouldUpdate = true;
-
-        // Debug output
-        debugPrintString("New tile spawned: ");
-        debugPrintNumber(board[i][j]);
-        debugPrintString(" at position (");
-        debugPrintNumber(i);
-        debugPrintString(",");
-        debugPrintNumber(j);
-        debugPrintString(")\r\n");
-    }
-    else
-    {
-        debugPrintString("WARNING: No empty cells to spawn tile!\r\n");
     }
 }
 
@@ -372,14 +249,7 @@ bool checkWin(int board[BOARD_SIZE][BOARD_SIZE])
         {
             if (board[i][j] >= WIN_TILE)
             {
-                debugPrintString("WIN CONDITION: Found tile ");
-                debugPrintNumber(board[i][j]);
-                debugPrintString(" at (");
-                debugPrintNumber(i);
-                debugPrintString(",");
-                debugPrintNumber(j);
-                debugPrintString(")\r\n");
-                return true;
+                return (true & !flagContinue) ;
             }
         }
     }
@@ -390,69 +260,42 @@ bool checkGameOver(int board[BOARD_SIZE][BOARD_SIZE])
 {
     // If there are empty cells, game is not over
     if (hasEmptyCell(board)) {
-        debugPrintString("Game continues: Empty cells available\r\n");
         return false;
     }
 
     // If no empty cells but can still merge, game is not over
     if (canMerge(board)) {
-        debugPrintString("Game continues: Merge possible\r\n");
         return false;
     }
 
     // No empty cells and no possible merges = game over
-    debugPrintString("GAME OVER: No empty cells and no merges possible\r\n");
     return true;
 }
 
 bool hasEmptyCell(int board[BOARD_SIZE][BOARD_SIZE])
 {
-    int emptyCount = 0;
     for (int i = 0; i < BOARD_SIZE; i++)
-    {
         for (int j = 0; j < BOARD_SIZE; j++)
-        {
             if (board[i][j] == 0)
-                emptyCount++;
-        }
-    }
-
-    debugPrintString("Empty cells: ");
-    debugPrintNumber(emptyCount);
-    debugPrintString("\r\n");
-
-    return emptyCount > 0;
+                return true;
+    return false;
 }
 
 bool canMerge(int board[BOARD_SIZE][BOARD_SIZE])
 {
-    int mergeCount = 0;
-
     // Check horizontal merges
     for (int i = 0; i < BOARD_SIZE; i++)
-    {
         for (int j = 0; j < BOARD_SIZE - 1; j++)
-        {
             if (board[i][j] == board[i][j + 1] && board[i][j] != 0)
-                mergeCount++;
-        }
-    }
+            	return true;
 
     // Check vertical merges
     for (int i = 0; i < BOARD_SIZE - 1; i++)
-    {
         for (int j = 0; j < BOARD_SIZE; j++)
-        {
             if (board[i][j] == board[i + 1][j] && board[i][j] != 0)
-                mergeCount++;
-        }
-    }
+            	return true;
 
-    debugPrintString("Possible merges: ");
-    debugPrintNumber(mergeCount);
-    debugPrintString("\r\n");
-
-    return mergeCount > 0;
+    return false;
 }
 
 void SaveBestScore(int score)

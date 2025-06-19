@@ -56,6 +56,9 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_LNF5" Alignment="Center" TypographyId="NewGame">
+        <Translation Language="GB">Continue</Translation>
+      </Text>
       <Text Id="__SingleUse_C75K" Alignment="Left" TypographyId="Score">
         <Translation Language="GB">00000</Translation>
       </Text>

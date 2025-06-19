@@ -1,12 +1,13 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:104:18:virtual void touchgfx::Screen::afterTransition()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Screen.hpp:154:18:virtual void touchgfx::Screen::handleKeyEvent(uint8_t)	0	static
-C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:74:6:virtual void GameScreenView::tearDownScreen()	0	static
+C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:75:6:virtual void GameScreenView::tearDownScreen()	0	static
 ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp:15:13:GameScreenView::~GameScreenView()	8	static
 ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp:15:13:virtual GameScreenView::~GameScreenView()	8	static
-C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:23:1:GameScreenView::GameScreenView()	8	static
-C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:28:6:virtual void GameScreenView::setupScreen()	16	static
-C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:79:6:virtual void GameScreenView::NewGame()	16	static
-C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:88:6:void GameScreenView::WinGame()	0	static
-C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:94:6:void GameScreenView::GameOver()	0	static
-C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:100:6:void GameScreenView::updateScore(int)	24	static
-C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:46:6:virtual void GameScreenView::handleTickEvent()	24	static
+C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:21:1:GameScreenView::GameScreenView()	8	static
+C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:26:6:virtual void GameScreenView::setupScreen()	16	static
+C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:80:6:virtual void GameScreenView::NewGame()	16	static
+C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:92:6:void GameScreenView::WinGame()	0	static
+C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:98:6:void GameScreenView::GameOver()	0	static
+C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:104:6:void GameScreenView::Continue()	8	static
+C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:112:6:void GameScreenView::updateScore(int)	24	static
+C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/gamescreen_screen/GameScreenView.cpp:47:6:virtual void GameScreenView::handleTickEvent()	24	static

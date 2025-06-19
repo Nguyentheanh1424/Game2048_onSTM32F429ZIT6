@@ -28,6 +28,7 @@ enum TEXTS
     T_TILE32,
     T_TILE00,
     T_TILE33,
+    T___SINGLEUSE_LNF5,
     T___SINGLEUSE_C75K,
     T___SINGLEUSE_EO8A,
     T_AAA,

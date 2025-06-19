@@ -22,6 +22,7 @@ public:
     void NewGame();
     void WinGame();
     void GameOver();
+    void Continue();
 
     void updateScore(int score);
 

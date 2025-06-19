@@ -10,10 +10,8 @@ extern "C" {
     extern volatile bool shouldUpdate;
     extern int currentGameState;
     extern int score;
+    extern bool flagContinue;
 
-    extern UART_HandleTypeDef huart1;
-
-    extern void debugPrintNumber(int num);
     extern void SaveBestScore(int score);
     extern int LoadBestScore(void);
     extern int (*getGameBoard(void))[BOARD_SIZE];
@@ -38,7 +36,10 @@ void GameScreenView::setupScreen()
 	BestScore.invalidate();
     lastDisplayedScore = -1;
 
+    flagContinue = false;
+
     initGame();
+
 }
 
 
@@ -82,6 +83,9 @@ void GameScreenView::NewGame()
 	gameOver.invalidate();
 	winGame.setVisible(false);
 	winGame.invalidate();
+
+	flagContinue = false;
+
 	initGame();
 }
 
@@ -95,6 +99,14 @@ void GameScreenView::GameOver()
 {
 	gameOver.setVisible(true);
 	gameOver.invalidate();
+}
+
+void GameScreenView::Continue()
+{
+	winGame.setVisible(false);
+	winGame.invalidate();
+	flagContinue = true;
+	currentGameState = 0;
 }
 
 void GameScreenView::updateScore(int currentScore)
@@ -118,7 +130,6 @@ void GameScreenView::updateScore(int currentScore)
             SaveBestScore(bestScore);
         }
 
-        debugPrintNumber(bestScore);
     }
 }
 

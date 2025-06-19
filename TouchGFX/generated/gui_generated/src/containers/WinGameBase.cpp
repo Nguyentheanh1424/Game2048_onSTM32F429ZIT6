@@ -15,19 +15,27 @@ WinGameBase::WinGameBase() :
     box1.setColor(touchgfx::Color::getColorFromRGB(255, 140, 140));
     add(box1);
 
-    textArea1.setXY(11, 56);
+    textArea1.setXY(11, 24);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 247, 247));
     textArea1.setLinespacing(0);
     textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_S3O2));
     add(textArea1);
 
-    buttonWithLabel1.setXY(50, 120);
-    buttonWithLabel1.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_NORMAL_ID));
-    buttonWithLabel1.setLabelText(touchgfx::TypedText(T___SINGLEUSE_UPPK));
-    buttonWithLabel1.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel1.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel1.setAction(buttonCallback);
-    add(buttonWithLabel1);
+    newGame.setXY(50, 80);
+    newGame.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_NORMAL_ID));
+    newGame.setLabelText(touchgfx::TypedText(T___SINGLEUSE_UPPK));
+    newGame.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    newGame.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    newGame.setAction(buttonCallback);
+    add(newGame);
+
+    playContinue.setXY(50, 130);
+    playContinue.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_NORMAL_ID));
+    playContinue.setLabelText(touchgfx::TypedText(T___SINGLEUSE_LNF5));
+    playContinue.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    playContinue.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    playContinue.setAction(buttonCallback);
+    add(playContinue);
 }
 
 WinGameBase::~WinGameBase()
@@ -42,11 +50,18 @@ void WinGameBase::initialize()
 
 void WinGameBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &buttonWithLabel1)
+    if (&src == &newGame)
     {
         //Interaction1
-        //When buttonWithLabel1 clicked call virtual function
+        //When newGame clicked call virtual function
         //Call RetryButtonClicked
         RetryButtonClicked();
+    }
+    if (&src == &playContinue)
+    {
+        //Interaction2
+        //When playContinue clicked call virtual function
+        //Call ContinueGame
+        ContinueGame();
     }
 }

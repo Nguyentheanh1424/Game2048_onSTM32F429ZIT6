@@ -24,6 +24,10 @@ public:
     {
         // Override and implement this function in WinGame
     }
+    virtual void ContinueGame()
+    {
+        // Override and implement this function in WinGame
+    }
 
 protected:
     FrontendApplication& application() {
@@ -35,7 +39,8 @@ protected:
      */
     touchgfx::Box box1;
     touchgfx::TextArea textArea1;
-    touchgfx::ButtonWithLabel buttonWithLabel1;
+    touchgfx::ButtonWithLabel newGame;
+    touchgfx::ButtonWithLabel playContinue;
 
 private:
 

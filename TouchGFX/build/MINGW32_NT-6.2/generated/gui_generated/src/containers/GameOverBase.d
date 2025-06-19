@@ -1,7 +1,6 @@
-build/MINGW32_NT-6.2/gui/src/gamescreen_screen/GameScreenPresenter.o: \
- gui/src/gamescreen_screen/GameScreenPresenter.cpp \
- gui/include/gui/gamescreen_screen/GameScreenView.hpp \
- generated/gui_generated/include/gui_generated/gamescreen_screen/GameScreenViewBase.hpp \
+build/MINGW32_NT-6.2/generated/gui_generated/src/containers/GameOverBase.o: \
+ generated/gui_generated/src/containers/GameOverBase.cpp \
+ generated/gui_generated/include/gui_generated/containers/GameOverBase.hpp \
  gui/include/gui/common/FrontendApplication.hpp \
  generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
  ../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp \
@@ -43,33 +42,18 @@ build/MINGW32_NT-6.2/gui/src/gamescreen_screen/GameScreenPresenter.o: \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Gestures.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/transitions/Transition.hpp \
  gui/include/gui/model/Model.hpp \
- ../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp \
- gui/include/gui/gamescreen_screen/GameScreenPresenter.hpp \
- gui/include/gui/model/ModelListener.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithIcon.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
- gui/include/gui/containers/SquareContainer.hpp \
- generated/gui_generated/include/gui_generated/containers/SquareContainerBase.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/MoveAnimator.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
- ../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/FadeAnimator.hpp \
- gui/include/gui/containers/WinGame.hpp \
- generated/gui_generated/include/gui_generated/containers/WinGameBase.hpp \
  ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
- gui/include/gui/containers/GameOver.hpp \
- generated/gui_generated/include/gui_generated/containers/GameOverBase.hpp
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp \
+ ../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp \
+ generated/texts/include/texts/TextKeysAndLanguages.hpp \
+ generated/images/include/images/BitmapDatabase.hpp
 
-gui/include/gui/gamescreen_screen/GameScreenView.hpp:
-
-generated/gui_generated/include/gui_generated/gamescreen_screen/GameScreenViewBase.hpp:
+generated/gui_generated/include/gui_generated/containers/GameOverBase.hpp:
 
 gui/include/gui/common/FrontendApplication.hpp:
 
@@ -153,33 +137,7 @@ generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp
 
 gui/include/gui/model/Model.hpp:
 
-../Middlewares/ST/touchgfx/framework/include/mvp/View.hpp:
-
-gui/include/gui/gamescreen_screen/GameScreenPresenter.hpp:
-
-gui/include/gui/model/ModelListener.hpp:
-
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ScalableImage.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Image.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithIcon.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
-
-gui/include/gui/containers/SquareContainer.hpp:
-
-generated/gui_generated/include/gui_generated/containers/SquareContainerBase.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/EasingEquations.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/MoveAnimator.hpp:
-
-../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp:
 
@@ -187,14 +145,14 @@ generated/gui_generated/include/gui_generated/containers/SquareContainerBase.hpp
 
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp:
 
-../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/FadeAnimator.hpp:
-
-gui/include/gui/containers/WinGame.hpp:
-
-generated/gui_generated/include/gui_generated/containers/WinGameBase.hpp:
-
 ../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:
 
-gui/include/gui/containers/GameOver.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Button.hpp:
 
-generated/gui_generated/include/gui_generated/containers/GameOverBase.hpp:
+../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/AbstractButton.hpp:
+
+../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp:
+
+generated/texts/include/texts/TextKeysAndLanguages.hpp:
+
+generated/images/include/images/BitmapDatabase.hpp:

@@ -13,16 +13,17 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp:165:23:virtual touchgfx::Drawable* touchgfx::Container::getFirstChild()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:touchgfx::TypedText::~TypedText()	1
 ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/WinGameBase.hpp:23:18:virtual void WinGameBase::RetryButtonClicked()	1
+../../TouchGFX/generated/gui_generated/include/gui_generated/containers/WinGameBase.hpp:27:18:virtual void WinGameBase::ContinueGame()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:touchgfx::Callback<WinGameBase, const touchgfx::AbstractButton&>::~Callback()	1
-C:/TouchGFXProjects/Game2048/TouchGFX/generated/gui_generated/src/containers/WinGameBase.cpp:33:1:WinGameBase::~WinGameBase()	1
-C:/TouchGFXProjects/Game2048/TouchGFX/generated/gui_generated/src/containers/WinGameBase.cpp:38:6:virtual void WinGameBase::initialize()	1
+C:/TouchGFXProjects/Game2048/TouchGFX/generated/gui_generated/src/containers/WinGameBase.cpp:41:1:WinGameBase::~WinGameBase()	1
+C:/TouchGFXProjects/Game2048/TouchGFX/generated/gui_generated/src/containers/WinGameBase.cpp:46:6:virtual void WinGameBase::initialize()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:386:18:void touchgfx::Callback<dest_type, T1, void, void>::execute(T1) [with dest_type = WinGameBase; T1 = const touchgfx::AbstractButton&]	2
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:396:18:bool touchgfx::Callback<dest_type, T1, void, void>::isValid() const [with dest_type = WinGameBase; T1 = const touchgfx::AbstractButton&]	3
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:65:13:virtual touchgfx::TypedText::~TypedText()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Callback.hpp:357:8:virtual touchgfx::Callback<WinGameBase, const touchgfx::AbstractButton&>::~Callback()	1
-C:/TouchGFXProjects/Game2048/TouchGFX/generated/gui_generated/src/containers/WinGameBase.cpp:33:1:virtual WinGameBase::~WinGameBase()	1
+C:/TouchGFXProjects/Game2048/TouchGFX/generated/gui_generated/src/containers/WinGameBase.cpp:41:1:virtual WinGameBase::~WinGameBase()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	2
-C:/TouchGFXProjects/Game2048/TouchGFX/generated/gui_generated/src/containers/WinGameBase.cpp:43:6:void WinGameBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	2
+C:/TouchGFXProjects/Game2048/TouchGFX/generated/gui_generated/src/containers/WinGameBase.cpp:51:6:void WinGameBase::buttonCallbackHandler(const touchgfx::AbstractButton&)	3
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Widget.hpp:45:18:virtual void touchgfx::Widget::getLastChild(int16_t, int16_t, touchgfx::Drawable**)	3
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:48:5:touchgfx::Drawable::Drawable()	1
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:343:10:void touchgfx::Drawable::setXY(int16_t, int16_t)	1

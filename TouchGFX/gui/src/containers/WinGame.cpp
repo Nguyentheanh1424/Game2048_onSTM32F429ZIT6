@@ -20,3 +20,11 @@ void WinGame::RetryButtonClicked()
         gameViewInstance->NewGame();
     }
 }
+
+void WinGame::ContinueGame()
+{
+	if (gameViewInstance)
+	{
+		gameViewInstance->Continue();
+	}
+}

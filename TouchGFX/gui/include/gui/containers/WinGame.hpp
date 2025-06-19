@@ -12,6 +12,7 @@ public:
     virtual void initialize();
 
     void RetryButtonClicked();
+    void ContinueGame();
 
 protected:
 };
