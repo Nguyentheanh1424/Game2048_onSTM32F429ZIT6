@@ -6,13 +6,18 @@ GameScreenView* gameViewInstance = nullptr;
 
 extern "C" {
     #include <stdbool.h>
+	#include "main.h"
     extern volatile bool shouldUpdate;
     extern int currentGameState;
     extern int score;
 
+    extern UART_HandleTypeDef huart1;
+
+    extern void debugPrintNumber(int num);
+    extern void SaveBestScore(int score);
+    extern int LoadBestScore(void);
     extern int (*getGameBoard(void))[BOARD_SIZE];
     extern void initGame();
-
 }
 
 GameScreenView::GameScreenView()
@@ -23,10 +28,20 @@ GameScreenView::GameScreenView()
 void GameScreenView::setupScreen()
 {
     GameScreenViewBase::setupScreen();
+
     Square.initialize();
     gameViewInstance = this;
+
+    bestScore = LoadBestScore();
+    Unicode::snprintf(BestScoreBuffer, 10, "%d", bestScore);
+	BestScore.setWildcard(BestScoreBuffer);
+	BestScore.invalidate();
+    lastDisplayedScore = -1;
+
     initGame();
 }
+
+
 
 void GameScreenView::handleTickEvent()
 {
@@ -34,6 +49,10 @@ void GameScreenView::handleTickEvent()
 
 	    if (shouldUpdate)
 	    {
+	    	shouldUpdate = false;
+
+	    	updateScore(score);
+
 	    	switch(currentGameState)
 			{
 	    		case 1:
@@ -44,8 +63,6 @@ void GameScreenView::handleTickEvent()
 	    			GameOver();
 	    			break;
 			}
-
-	        shouldUpdate = false;
 	        int (*board)[BOARD_SIZE] = getGameBoard();
 	        for (int row = 0; row < BOARD_SIZE; row++)
 	                for (int col = 0; col < BOARD_SIZE; col++)
@@ -80,11 +97,31 @@ void GameScreenView::GameOver()
 	gameOver.invalidate();
 }
 
-void GameScreenView::updateScore(int score)
+void GameScreenView::updateScore(int currentScore)
 {
-	Unicode::snprintf(scoreBuffer, sizeof(scoreBuffer)/sizeof(scoreBuffer[0]), "%d", score);
-	Score.setWildcard(scoreBuffer);
-	Score.invalidate();
+    if (currentScore != lastDisplayedScore)
+    {
+        lastDisplayedScore = currentScore;
+
+        Unicode::snprintf(ScoreBuffer, 10, "%d", currentScore);
+        Score.setWildcard(ScoreBuffer);
+        Score.invalidate();
+
+        if (currentScore > bestScore)
+        {
+            bestScore = currentScore;
+
+            Unicode::snprintf(BestScoreBuffer, 10, "%d", bestScore);
+            BestScore.setWildcard(BestScoreBuffer);
+            BestScore.invalidate();
+
+            SaveBestScore(bestScore);
+        }
+
+        debugPrintNumber(bestScore);
+    }
 }
+
+
 
 

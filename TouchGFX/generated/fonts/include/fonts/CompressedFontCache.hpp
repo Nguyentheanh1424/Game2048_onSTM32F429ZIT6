@@ -31,7 +31,7 @@ private:
         const uint8_t* pixels;
     };
 
-    static const int cacheSizeBytes = 4096;
+    static const int cacheSizeBytes = 24576;
     static const int cacheWords = (cacheSizeBytes + 3) / 4;
     static uint32_t bitmapFontCache[cacheWords];
     static uint8_t* pixelsTop;

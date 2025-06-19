@@ -49,6 +49,14 @@ protected:
     touchgfx::TextAreaWithOneWildcard BestScore;
     touchgfx::TextAreaWithOneWildcard Score;
 
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t BESTSCORE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar BestScoreBuffer[BESTSCORE_SIZE];
+    static const uint16_t SCORE_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar ScoreBuffer[SCORE_SIZE];
+
 private:
 
     /*

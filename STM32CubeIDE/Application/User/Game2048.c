@@ -14,11 +14,13 @@
 #include <stdio.h>
 
 #define BOARD_SIZE 4
+#define BEST_SCORE_BKP_REG RTC_BKP_DR0
 
 int gameBoard[BOARD_SIZE][BOARD_SIZE] = {0};
 int currentGameState = GAME_PLAYING;
 int score = 0;
 
+extern RTC_HandleTypeDef hrtc;
 extern UART_HandleTypeDef huart1;
 extern volatile bool shouldUpdate;
 
@@ -108,6 +110,8 @@ void debugPrintBoard(int board[BOARD_SIZE][BOARD_SIZE])
 void initGame(void)
 {
     debugPrintString("\r\n*** INIT GAME 2048 ***\r\n");
+
+    score = 0;
 
     initRandom();
 
@@ -450,6 +454,17 @@ bool canMerge(int board[BOARD_SIZE][BOARD_SIZE])
 
     return mergeCount > 0;
 }
+
+void SaveBestScore(int score)
+{
+    HAL_RTCEx_BKUPWrite(&hrtc, BEST_SCORE_BKP_REG, (uint32_t)score);
+}
+
+int LoadBestScore(void)
+{
+    return (int)HAL_RTCEx_BKUPRead(&hrtc, BEST_SCORE_BKP_REG);
+}
+
 
 int (*getGameBoard(void))[BOARD_SIZE]
 {

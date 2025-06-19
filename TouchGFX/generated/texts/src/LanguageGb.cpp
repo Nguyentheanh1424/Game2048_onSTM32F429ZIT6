@@ -7,7 +7,16 @@
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE;
 
-// Remap all strings
+// Remap local strings
+TEXT_LOCATION_FLASH_PRAGMA
+KEEP extern const touchgfx::Unicode::UnicodeChar textsGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
+    0x42, 0x65, 0x73, 0x74, 0x20, 0x53, 0x63, 0x6f, 0x72, 0x65, 0x3a, 0x20, 0x2, 0x0, // @0 "Best Score: <>"
+    0x47, 0x61, 0x6d, 0x65, 0x20, 0x4f, 0x76, 0x65, 0x72, 0x21, 0x0, // @14 "Game Over!"
+    0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x0, // @25 "000000000"
+    0x4e, 0x65, 0x77, 0x20, 0x47, 0x61, 0x6d, 0x65, 0x0, // @35 "New Game"
+    0x59, 0x6f, 0x75, 0x20, 0x57, 0x69, 0x6e, 0x21, 0x0 // @44 "You Win!"
+};
+
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
     12, // T_TILE01: "<>"
@@ -26,10 +35,13 @@ KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
     12, // T_TILE32: "<>"
     12, // T_TILE00: "<>"
     12, // T_TILE33: "<>"
+    29, // T___SINGLEUSE_C75K: "00000"
+    25, // T___SINGLEUSE_EO8A: "000000000"
+    12, // T_AAA: "<>"
     0,  // T___SINGLEUSE_1BDR: "Best Score: <>"
     5,  // T___SINGLEUSE_0PL8: "Score: <>"
-    25, // T___SINGLEUSE_60P1: "New Game"
-    25, // T___SINGLEUSE_UPPK: "New Game"
+    35, // T___SINGLEUSE_60P1: "New Game"
+    35, // T___SINGLEUSE_UPPK: "New Game"
     14, // T___SINGLEUSE_N9NK: "Game Over!"
-    34  // T___SINGLEUSE_S3O2: "You Win!"
+    44  // T___SINGLEUSE_S3O2: "You Win!"
 };

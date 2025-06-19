@@ -25,6 +25,9 @@ bool checkGameOver(int board[BOARD_SIZE][BOARD_SIZE]);
 bool hasEmptyCell(int board[BOARD_SIZE][BOARD_SIZE]);
 bool canMerge(int board[BOARD_SIZE][BOARD_SIZE]);
 
+void SaveBestScore(int score);
+int LoadBestScore(void);
+
 void debugPrintBoard(int board[BOARD_SIZE][BOARD_SIZE]);
 void debugPrintString(const char* str);
 void debugPrintNumber(int num);

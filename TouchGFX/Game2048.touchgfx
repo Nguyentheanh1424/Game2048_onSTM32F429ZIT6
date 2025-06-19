@@ -81,24 +81,32 @@
             "Name": "BestScore",
             "X": 120,
             "Y": 30,
-            "Width": 68,
+            "Width": 103,
             "Height": 11,
             "TextId": "__SingleUse_1BDR",
             "TextRotation": "0",
             "AutoSize": true,
-            "Wildcard1": {}
+            "Wildcard1": {
+              "TextId": "__SingleUse_C75K",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
           },
           {
             "Type": "TextArea",
             "Name": "Score",
             "X": 120,
             "Y": 15,
-            "Width": 39,
+            "Width": 102,
             "Height": 11,
             "TextId": "__SingleUse_0PL8",
             "TextRotation": "0",
             "AutoSize": true,
-            "Wildcard1": {}
+            "Wildcard1": {
+              "TextId": "__SingleUse_EO8A",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
           }
         ],
         "Interactions": [

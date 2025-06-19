@@ -8,8 +8,8 @@
 class GameScreenView : public GameScreenViewBase
 {
 public:
-	Unicode::UnicodeChar scoreBuffer[6];
-	Unicode::UnicodeChar bestScoreBuffer[6];
+	int bestScore;
+	int lastDisplayedScore;
 
     GameScreenView();
     virtual ~GameScreenView() {}

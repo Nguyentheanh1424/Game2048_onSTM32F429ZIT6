@@ -48,12 +48,18 @@ GameScreenViewBase::GameScreenViewBase() :
     BestScore.setXY(120, 30);
     BestScore.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     BestScore.setLinespacing(0);
+    Unicode::snprintf(BestScoreBuffer, BESTSCORE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_C75K).getText());
+    BestScore.setWildcard(BestScoreBuffer);
+    BestScore.resizeToCurrentText();
     BestScore.setTypedText(touchgfx::TypedText(T___SINGLEUSE_1BDR));
     add(BestScore);
 
     Score.setXY(120, 15);
     Score.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Score.setLinespacing(0);
+    Unicode::snprintf(ScoreBuffer, SCORE_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_EO8A).getText());
+    Score.setWildcard(ScoreBuffer);
+    Score.resizeToCurrentText();
     Score.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0PL8));
     add(Score);
 }
