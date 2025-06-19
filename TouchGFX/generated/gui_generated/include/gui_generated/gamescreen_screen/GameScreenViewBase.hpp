@@ -9,8 +9,8 @@
 #include <gui/gamescreen_screen/GameScreenPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
 #include <touchgfx/widgets/ScalableImage.hpp>
-#include <gui/containers/SquareContainer.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
+#include <gui/containers/SquareContainer.hpp>
 
 class GameScreenViewBase : public touchgfx::View<GameScreenPresenter>
 {
@@ -28,11 +28,11 @@ protected:
      * Member Declarations
      */
     touchgfx::Box __background;
-    touchgfx::ScalableImage Background;
-    SquareContainer Square;
+    touchgfx::ScalableImage background;
     touchgfx::ScalableImage Logo;
     touchgfx::ScalableImage title;
     touchgfx::ButtonWithIcon buttonWithIcon1;
+    SquareContainer Square;
 
 private:
 

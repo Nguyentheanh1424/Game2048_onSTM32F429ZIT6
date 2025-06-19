@@ -9,9 +9,9 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:501:18:virtual void touchgfx::Drawable::handleTickEvent()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:588:18:virtual void touchgfx::Drawable::moveTo(int16_t, int16_t)	4	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/containers/Container.hpp:165:23:virtual touchgfx::Drawable* touchgfx::Container::getFirstChild()	0	static
-../../TouchGFX/gui/include/gui/containers/SquareContainer.hpp:10:13:SquareContainer::~SquareContainer()	8	static
-../../TouchGFX/gui/include/gui/containers/SquareContainer.hpp:10:13:virtual SquareContainer::~SquareContainer()	8	static
+../../TouchGFX/gui/include/gui/containers/SquareContainer.hpp:14:13:SquareContainer::~SquareContainer()	8	static
+../../TouchGFX/gui/include/gui/containers/SquareContainer.hpp:14:13:virtual SquareContainer::~SquareContainer()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
-C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/containers/SquareContainer.cpp:3:1:SquareContainer::SquareContainer()	8	static
-C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/containers/SquareContainer.cpp:15:6:void SquareContainer::updateTile(int, int, int)	16	static
-C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/containers/SquareContainer.cpp:8:6:virtual void SquareContainer::initialize()	0	static
+C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/containers/SquareContainer.cpp:5:1:SquareContainer::SquareContainer()	8	static
+C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/containers/SquareContainer.cpp:38:6:void SquareContainer::updateTile(int, int, int)	56	static
+C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/containers/SquareContainer.cpp:10:6:virtual void SquareContainer::initialize()	8	static

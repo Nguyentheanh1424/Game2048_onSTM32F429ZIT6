@@ -5,61 +5,62 @@
   </Languages>
   <Texts>
     <TextGroup Id="Group1" />
-    <TextGroup Id="Unsorted">
+    <TextGroup Id="tile">
       <Text Id="tile01" Alignment="Center" TypographyId="Custom">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
       </Text>
       <Text Id="tile02" Alignment="Center" TypographyId="Custom">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
       </Text>
       <Text Id="tile03" Alignment="Center" TypographyId="Custom">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
       </Text>
       <Text Id="tile10" Alignment="Center" TypographyId="Custom">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
       </Text>
       <Text Id="tile11" Alignment="Center" TypographyId="Custom">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
       </Text>
       <Text Id="tile12" Alignment="Center" TypographyId="Custom">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
       </Text>
       <Text Id="tile13" Alignment="Center" TypographyId="Custom">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
       </Text>
       <Text Id="tile20" Alignment="Center" TypographyId="Custom">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
       </Text>
       <Text Id="tile21" Alignment="Center" TypographyId="Custom">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
       </Text>
       <Text Id="tile22" Alignment="Center" TypographyId="Custom">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
       </Text>
       <Text Id="tile23" Alignment="Center" TypographyId="Custom">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
       </Text>
       <Text Id="tile30" Alignment="Center" TypographyId="Custom">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
       </Text>
       <Text Id="tile31" Alignment="Center" TypographyId="Custom">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
       </Text>
       <Text Id="tile32" Alignment="Center" TypographyId="Custom">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
       </Text>
       <Text Id="tile00" Alignment="Center" TypographyId="Custom">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
       </Text>
       <Text Id="tile33" Alignment="Center" TypographyId="Custom">
-        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
       </Text>
     </TextGroup>
+    <TextGroup Id="Unsorted" />
   </Texts>
   <Typographies>
-    <Typography Id="Default" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0123456789" />
-    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0123456789" />
-    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0123456789" />
+    <Typography Id="Default" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Custom" Font="verdanab.ttf" Size="14" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0123456789" />
   </Typographies>
 </TextDatabase>

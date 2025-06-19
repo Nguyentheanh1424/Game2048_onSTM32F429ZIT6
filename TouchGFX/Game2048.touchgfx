@@ -6,20 +6,11 @@
         "Components": [
           {
             "Type": "ScalableImage",
-            "Name": "Background",
+            "Name": "background",
             "Width": 240,
             "Height": 320,
             "Filename": "background.png",
             "ScalingAlgorithm": "Nearest-neighbor"
-          },
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "Square",
-            "X": 20,
-            "Y": 50,
-            "Width": 200,
-            "Height": 200,
-            "CustomContainerDefinitionName": "SquareContainer"
           },
           {
             "Type": "ScalableImage",
@@ -55,6 +46,15 @@
             "IconX": 97,
             "IconHeight": 50,
             "IconWidth": 50
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "Square",
+            "X": 20,
+            "Y": 50,
+            "Width": 200,
+            "Height": 200,
+            "CustomContainerDefinitionName": "SquareContainer"
           }
         ],
         "Interactions": []

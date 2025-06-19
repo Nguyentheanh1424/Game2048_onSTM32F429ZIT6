@@ -11,13 +11,10 @@ GameScreenViewBase::GameScreenViewBase()
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(__background);
 
-    Background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_ID));
-    Background.setPosition(0, 0, 240, 320);
-    Background.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
-    add(Background);
-
-    Square.setXY(20, 50);
-    add(Square);
+    background.setBitmap(touchgfx::Bitmap(BITMAP_BACKGROUND_ID));
+    background.setPosition(0, 0, 240, 320);
+    background.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
+    add(background);
 
     Logo.setBitmap(touchgfx::Bitmap(BITMAP_LOGO_ID));
     Logo.setPosition(16, 5, 100, 40);
@@ -33,6 +30,9 @@ GameScreenViewBase::GameScreenViewBase()
     buttonWithIcon1.setBitmaps(touchgfx::Bitmap(BITMAP_NEWGAMEBTN_ID), touchgfx::Bitmap(BITMAP_NEWGAMEBTN_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
     buttonWithIcon1.setIconXY(97, 0);
     add(buttonWithIcon1);
+
+    Square.setXY(20, 50);
+    add(Square);
 }
 
 GameScreenViewBase::~GameScreenViewBase()

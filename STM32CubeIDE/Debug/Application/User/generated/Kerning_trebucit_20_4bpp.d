@@ -1,0 +1,10 @@
+Application/User/generated/Kerning_trebucit_20_4bpp.o: \
+ C:/TouchGFXProjects/Game2048/TouchGFX/generated/fonts/src/Kerning_trebucit_20_4bpp.cpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp:

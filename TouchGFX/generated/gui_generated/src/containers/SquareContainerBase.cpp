@@ -232,7 +232,7 @@ SquareContainerBase::SquareContainerBase()
     Text_00.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     Text_00.setLinespacing(0);
     Text_00.setWideTextAction(WIDE_TEXT_CHARWRAP_DOUBLE_ELLIPSIS);
-    Text_00.setTypedText(touchgfx::TypedText(T_TILE00));
+    Text_00.setTypedText(touchgfx::TypedText(T_TILE02));
     Tile00.add(Text_00);
 
     add(Tile00);
