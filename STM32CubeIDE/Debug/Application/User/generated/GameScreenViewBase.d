@@ -60,8 +60,14 @@ Application/User/generated/GameScreenViewBase.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/FadeAnimator.hpp \
+ ../../TouchGFX/gui/include/gui/containers/WinGame.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/WinGameBase.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp \
+ ../../TouchGFX/gui/include/gui/containers/GameOver.hpp \
+ ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/GameOverBase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp \
- ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp
+ ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp \
+ ../../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp
 ../../TouchGFX/generated/gui_generated/include/gui_generated/gamescreen_screen/GameScreenViewBase.hpp:
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp:
@@ -122,5 +128,11 @@ Application/User/generated/GameScreenViewBase.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/FadeAnimator.hpp:
+../../TouchGFX/gui/include/gui/containers/WinGame.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/containers/WinGameBase.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/ButtonWithLabel.hpp:
+../../TouchGFX/gui/include/gui/containers/GameOver.hpp:
+../../TouchGFX/generated/gui_generated/include/gui_generated/containers/GameOverBase.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp:
 ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp:
+../../TouchGFX/generated/texts/include/texts/TextKeysAndLanguages.hpp:

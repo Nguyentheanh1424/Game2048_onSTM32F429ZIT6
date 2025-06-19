@@ -4,8 +4,10 @@
 #include <gui_generated/gamescreen_screen/GameScreenViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
-GameScreenViewBase::GameScreenViewBase()
+GameScreenViewBase::GameScreenViewBase() :
+    buttonCallback(this, &GameScreenViewBase::buttonCallbackHandler)
 {
     __background.setPosition(0, 0, 240, 320);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -17,7 +19,7 @@ GameScreenViewBase::GameScreenViewBase()
     add(background);
 
     Logo.setBitmap(touchgfx::Bitmap(BITMAP_LOGO_ID));
-    Logo.setPosition(16, 5, 100, 40);
+    Logo.setPosition(15, 5, 100, 40);
     Logo.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
     add(Logo);
 
@@ -26,13 +28,34 @@ GameScreenViewBase::GameScreenViewBase()
     title.setScalingAlgorithm(touchgfx::ScalableImage::NEAREST_NEIGHBOR);
     add(title);
 
-    buttonWithIcon1.setXY(165, 261);
-    buttonWithIcon1.setBitmaps(touchgfx::Bitmap(BITMAP_NEWGAMEBTN_ID), touchgfx::Bitmap(BITMAP_NEWGAMEBTN_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
-    buttonWithIcon1.setIconXY(97, 0);
-    add(buttonWithIcon1);
+    newGame.setXY(165, 260);
+    newGame.setBitmaps(touchgfx::Bitmap(BITMAP_NEWGAMEBTN_ID), touchgfx::Bitmap(BITMAP_NEWGAMEBTN_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID), touchgfx::Bitmap(BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID));
+    newGame.setIconXY(97, 0);
+    newGame.setAction(buttonCallback);
+    add(newGame);
 
     Square.setXY(20, 50);
     add(Square);
+
+    winGame.setXY(20, 50);
+    winGame.setVisible(false);
+    add(winGame);
+
+    gameOver.setXY(20, 50);
+    gameOver.setVisible(false);
+    add(gameOver);
+
+    BestScore.setXY(120, 30);
+    BestScore.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    BestScore.setLinespacing(0);
+    BestScore.setTypedText(touchgfx::TypedText(T___SINGLEUSE_1BDR));
+    add(BestScore);
+
+    Score.setXY(120, 15);
+    Score.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
+    Score.setLinespacing(0);
+    Score.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0PL8));
+    add(Score);
 }
 
 GameScreenViewBase::~GameScreenViewBase()
@@ -43,4 +66,17 @@ GameScreenViewBase::~GameScreenViewBase()
 void GameScreenViewBase::setupScreen()
 {
     Square.initialize();
+    winGame.initialize();
+    gameOver.initialize();
+}
+
+void GameScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &newGame)
+    {
+        //Interaction1
+        //When newGame clicked call virtual function
+        //Call NewGame
+        NewGame();
+    }
 }

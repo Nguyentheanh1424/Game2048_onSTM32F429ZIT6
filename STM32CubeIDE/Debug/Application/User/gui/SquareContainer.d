@@ -50,7 +50,8 @@ Application/User/gui/SquareContainer.o: \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextArea.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp \
- ../../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/FadeAnimator.hpp
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/FadeAnimator.hpp \
+ ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp
 ../../TouchGFX/gui/include/gui/containers/SquareContainer.hpp:
 ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/SquareContainerBase.hpp:
 ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp:
@@ -102,3 +103,4 @@ Application/User/gui/SquareContainer.o: \
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/TypedText.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Texts.hpp:
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/FadeAnimator.hpp:
+../../Middlewares/ST/touchgfx/framework/include/touchgfx/Color.hpp:

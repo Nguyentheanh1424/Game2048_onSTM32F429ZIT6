@@ -14,7 +14,7 @@ uint16_t touchgfx::Font::getStringWidth(const touchgfx::Unicode::UnicodeChar* te
 {
     va_list pArg;
     va_start(pArg, text);
-    uint16_t width = getStringWidthLTR(TEXT_DIRECTION_LTR, text, pArg);
+    uint16_t width = getStringWidthRTL(TEXT_DIRECTION_LTR, text, pArg);
     va_end(pArg);
     return width;
 }
@@ -23,13 +23,14 @@ uint16_t touchgfx::Font::getStringWidth(touchgfx::TextDirection textDirection, c
 {
     va_list pArg;
     va_start(pArg, text);
-    uint16_t width = getStringWidthLTR(textDirection, text, pArg);
+    uint16_t width = getStringWidthRTL(textDirection, text, pArg);
     va_end(pArg);
     return width;
 }
 
 touchgfx::Unicode::UnicodeChar touchgfx::TextProvider::getNextLigature(TextDirection direction)
 {
+    nextCharacters.replaceAt0(unicodeConverter(direction));
     if (fontGsubTable && nextCharacters.peekChar())
     {
         substituteGlyphs();
@@ -45,13 +46,14 @@ touchgfx::Unicode::UnicodeChar touchgfx::TextProvider::getNextLigature(TextDirec
 void touchgfx::TextProvider::initializeInternal()
 {
     fillInputBuffer();
+    unicodeConverterInit();
 }
 
 void touchgfx::LCD::drawString(touchgfx::Rect widgetArea, const touchgfx::Rect& invalidatedArea, const touchgfx::LCD::StringVisuals& stringVisuals, const touchgfx::Unicode::UnicodeChar* format, ...)
 {
     va_list pArg;
     va_start(pArg, format);
-    drawStringLTR(widgetArea, invalidatedArea, stringVisuals, format, pArg);
+    drawStringRTL(widgetArea, invalidatedArea, stringVisuals, format, pArg);
     va_end(pArg);
 }
 
@@ -60,7 +62,10 @@ extern const touchgfx::TypedText::TypedTextData* const typedTextDatabaseArray[];
 
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const touchgfx::Unicode::UnicodeChar texts_all_languages[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
-    0x2, 0x0 // @0 "<>"
+    0x42, 0x65, 0x73, 0x74, 0x20, 0x53, 0x63, 0x6f, 0x72, 0x65, 0x3a, 0x20, 0x2, 0x0, // @0 "Best Score: <>"
+    0x47, 0x61, 0x6d, 0x65, 0x20, 0x4f, 0x76, 0x65, 0x72, 0x21, 0x0, // @14 "Game Over!"
+    0x4e, 0x65, 0x77, 0x20, 0x47, 0x61, 0x6d, 0x65, 0x0, // @25 "New Game"
+    0x59, 0x6f, 0x75, 0x20, 0x57, 0x69, 0x6e, 0x21, 0x0 // @34 "You Win!"
 };
 
 TEXT_LOCATION_FLASH_PRAGMA

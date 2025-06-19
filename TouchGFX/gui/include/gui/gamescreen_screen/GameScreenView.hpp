@@ -8,13 +8,22 @@
 class GameScreenView : public GameScreenViewBase
 {
 public:
+	Unicode::UnicodeChar scoreBuffer[6];
+	Unicode::UnicodeChar bestScoreBuffer[6];
+
     GameScreenView();
     virtual ~GameScreenView() {}
 
     virtual void setupScreen();
     virtual void tearDownScreen();
 
-    void updateBoard(int board[BOARD_SIZE][BOARD_SIZE]);
+    virtual void handleTickEvent();
+
+    void NewGame();
+    void WinGame();
+    void GameOver();
+
+    void updateScore(int score);
 
 protected:
 };

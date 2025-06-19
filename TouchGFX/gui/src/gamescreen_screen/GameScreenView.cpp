@@ -1,24 +1,18 @@
 #include <gui/gamescreen_screen/GameScreenView.hpp>
 
-#include <stdio.h>
-#include <string.h>
-#include "stm32f4xx_hal.h"
-
 #define BOARD_SIZE 4
 
 GameScreenView* gameViewInstance = nullptr;
 
-extern "C" void initGame();
-extern UART_HandleTypeDef huart1;
+extern "C" {
+    #include <stdbool.h>
+    extern volatile bool shouldUpdate;
+    extern int currentGameState;
+    extern int score;
 
-void uart_printf(const char* fmt, ...)
-{
-    char buffer[128];
-    va_list args;
-    va_start(args, fmt);
-    vsnprintf(buffer, sizeof(buffer), fmt, args);
-    va_end(args);
-    HAL_UART_Transmit(&huart1, reinterpret_cast<const uint8_t*>(buffer), strlen(buffer), HAL_MAX_DELAY);
+    extern int (*getGameBoard(void))[BOARD_SIZE];
+    extern void initGame();
+
 }
 
 GameScreenView::GameScreenView()
@@ -28,18 +22,35 @@ GameScreenView::GameScreenView()
 
 void GameScreenView::setupScreen()
 {
-    uart_printf("setupScreen()\r\n");
-
     GameScreenViewBase::setupScreen();
     Square.initialize();
-    uart_printf("Square initialized\r\n");
-
     gameViewInstance = this;
-    uart_printf("gameViewInstance assigned\r\n");
-
     initGame();
+}
 
-    uart_printf("initGame() called\r\n");
+void GameScreenView::handleTickEvent()
+{
+	GameScreenViewBase::handleTickEvent();
+
+	    if (shouldUpdate)
+	    {
+	    	switch(currentGameState)
+			{
+	    		case 1:
+	    			WinGame();
+	    			break;
+
+	    		case 2:
+	    			GameOver();
+	    			break;
+			}
+
+	        shouldUpdate = false;
+	        int (*board)[BOARD_SIZE] = getGameBoard();
+	        for (int row = 0; row < BOARD_SIZE; row++)
+	                for (int col = 0; col < BOARD_SIZE; col++)
+	                    Square.updateTile(row, col, board[row][col]);
+	    }
 }
 
 
@@ -48,32 +59,32 @@ void GameScreenView::tearDownScreen()
     GameScreenViewBase::tearDownScreen();
 }
 
-void GameScreenView::updateBoard(int board[BOARD_SIZE][BOARD_SIZE])
+void GameScreenView::NewGame()
 {
-    uart_printf("updateBoard() called\r\n");
-
-    for (int row = 0; row < BOARD_SIZE; row++)
-    {
-        for (int col = 0; col < BOARD_SIZE; col++)
-        {
-            uart_printf("updateTile[%d][%d] = %d\r\n", row, col, board[row][col]);
-            Square.updateTile(row, col, board[row][col]);
-        }
-    }
+	gameOver.setVisible(false);
+	gameOver.invalidate();
+	winGame.setVisible(false);
+	winGame.invalidate();
+	initGame();
 }
 
-
-extern "C" void updateGameView(int board[BOARD_SIZE][BOARD_SIZE])
+void GameScreenView::WinGame()
 {
-    uart_printf("updateGameView() called\r\n");
-    if (gameViewInstance)
-    {
-        uart_printf("gameViewInstance is valid\r\n");
-        gameViewInstance->updateBoard(board);
-    }
-    else
-    {
-        uart_printf("gameViewInstance is NULL!\r\n");
-    }
+	winGame.setVisible(true);
+	winGame.invalidate();
 }
+
+void GameScreenView::GameOver()
+{
+	gameOver.setVisible(true);
+	gameOver.invalidate();
+}
+
+void GameScreenView::updateScore(int score)
+{
+	Unicode::snprintf(scoreBuffer, sizeof(scoreBuffer)/sizeof(scoreBuffer[0]), "%d", score);
+	Score.setWildcard(scoreBuffer);
+	Score.invalidate();
+}
+
 

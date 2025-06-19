@@ -26,6 +26,10 @@
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\SquareContainer.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\SquareContainerBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\GameOver.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\GameOverBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\WinGame.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\WinGameBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -181,6 +185,10 @@
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\SquareContainer.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SquareContainerBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\GameOver.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\GameOverBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\WinGame.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\WinGameBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

@@ -24,6 +24,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Game2048.h"
+#include <stdbool.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -43,7 +44,7 @@
 
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
-
+volatile bool shouldUpdate = false;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -260,23 +261,27 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 			if (GPIO_Pin == LEFT_Pin)
 			{
 				handleInputDirection(0);
+				shouldUpdate = true;
 
 			}
 
 			if (GPIO_Pin == RIGHT_Pin)
 			{
 				handleInputDirection(1);
+				shouldUpdate = true;
 
 			}
 
 			if (GPIO_Pin == UP_Pin)
 			{
 				handleInputDirection(2);
+				shouldUpdate = true;
 			}
 
 			if (GPIO_Pin == DOWN_Pin)
 			{
 				handleInputDirection(3);
+				shouldUpdate = true;
 			}
 
 			last_press = current_time;

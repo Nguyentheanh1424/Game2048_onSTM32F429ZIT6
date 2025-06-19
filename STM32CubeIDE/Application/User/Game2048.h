@@ -1,10 +1,3 @@
-/*
- * Game2048.h
- *
- *  Created on: Jun 13, 2025
- *      Author: nthea
- */
-
 #ifndef APPLICATION_USER_GAME2048_H_
 #define APPLICATION_USER_GAME2048_H_
 
@@ -12,16 +5,11 @@
 
 #define BOARD_SIZE 4
 #define WIN_TILE 2048
-
-// Game states
-typedef enum {
-    GAME_PLAYING = 0,
-    GAME_WON = 1,
-    GAME_OVER = 2
-} GameState;
+#define GAME_PLAYING 0
+#define GAME_WON     1
+#define GAME_OVER    2
 
 extern int gameBoard[BOARD_SIZE][BOARD_SIZE];
-extern GameState currentGameState;
 
 void initGame(void);
 void handleInputDirection(int direction);
@@ -36,12 +24,12 @@ bool checkWin(int board[BOARD_SIZE][BOARD_SIZE]);
 bool checkGameOver(int board[BOARD_SIZE][BOARD_SIZE]);
 bool hasEmptyCell(int board[BOARD_SIZE][BOARD_SIZE]);
 bool canMerge(int board[BOARD_SIZE][BOARD_SIZE]);
-GameState getGameState(void);
 
 void debugPrintBoard(int board[BOARD_SIZE][BOARD_SIZE]);
 void debugPrintString(const char* str);
 void debugPrintNumber(int num);
-void debugPrintGameState(GameState state);
+void debugPrintGameState(int state);
 
+int (*getGameBoard(void))[BOARD_SIZE];
 
 #endif /* APPLICATION_USER_GAME2048_H_ */

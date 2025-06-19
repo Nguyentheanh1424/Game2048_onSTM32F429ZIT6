@@ -11,6 +11,9 @@
 #include <touchgfx/widgets/ScalableImage.hpp>
 #include <touchgfx/widgets/ButtonWithIcon.hpp>
 #include <gui/containers/SquareContainer.hpp>
+#include <gui/containers/WinGame.hpp>
+#include <gui/containers/GameOver.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class GameScreenViewBase : public touchgfx::View<GameScreenPresenter>
 {
@@ -18,6 +21,14 @@ public:
     GameScreenViewBase();
     virtual ~GameScreenViewBase();
     virtual void setupScreen();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void NewGame()
+    {
+        // Override and implement this function in GameScreen
+    }
 
 protected:
     FrontendApplication& application() {
@@ -31,10 +42,24 @@ protected:
     touchgfx::ScalableImage background;
     touchgfx::ScalableImage Logo;
     touchgfx::ScalableImage title;
-    touchgfx::ButtonWithIcon buttonWithIcon1;
+    touchgfx::ButtonWithIcon newGame;
     SquareContainer Square;
+    WinGame winGame;
+    GameOver gameOver;
+    touchgfx::TextAreaWithOneWildcard BestScore;
+    touchgfx::TextAreaWithOneWildcard Score;
 
 private:
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<GameScreenViewBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

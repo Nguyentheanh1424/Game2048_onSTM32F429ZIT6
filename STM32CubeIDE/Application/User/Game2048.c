@@ -5,8 +5,6 @@
  *      Author: nthea
  */
 
-
-
 #include "Game2048.h"
 #include "main.h"
 #include <stdlib.h>
@@ -18,16 +16,38 @@
 #define BOARD_SIZE 4
 
 int gameBoard[BOARD_SIZE][BOARD_SIZE] = {0};
-GameState currentGameState = GAME_PLAYING;
+int currentGameState = GAME_PLAYING;
+int score = 0;
 
-extern void updateGameView(int board[BOARD_SIZE][BOARD_SIZE]);
 extern UART_HandleTypeDef huart1;
+extern volatile bool shouldUpdate;
 
-static int fakeRandCounter = 0;
-int fakeRand()
+// ========== LCG RANDOM IMPLEMENTATION ==========
+static uint32_t randSeed = 1;
+
+void initRandom(void)
 {
-    fakeRandCounter++;
-    return fakeRandCounter % 10;
+    randSeed = HAL_GetTick();
+
+    randSeed ^= (uint32_t)&randSeed;
+
+    if (randSeed == 0) randSeed = 1;
+
+    debugPrintString("Random seed initialized: ");
+    debugPrintNumber(randSeed);
+    debugPrintString("\r\n");
+}
+
+uint32_t customRand(void)
+{
+    // Linear Congruential Generator (LCG)
+    randSeed = randSeed * 1664525U + 1013904223U;
+    return randSeed;
+}
+
+int betterRand(void)
+{
+    return (int)(customRand() % 10);
 }
 
 // Debug functions for STM32 UART1
@@ -43,7 +63,7 @@ void debugPrintNumber(int num)
     debugPrintString(buffer);
 }
 
-void debugPrintGameState(GameState state)
+void debugPrintGameState(int state)
 {
     switch(state)
     {
@@ -89,6 +109,8 @@ void initGame(void)
 {
     debugPrintString("\r\n*** INIT GAME 2048 ***\r\n");
 
+    initRandom();
+
     // Clear board
     for (int i = 0; i < BOARD_SIZE; i++)
         for (int j = 0; j < BOARD_SIZE; j++)
@@ -102,7 +124,6 @@ void initGame(void)
     spawnRandomTile(gameBoard);
 
     debugPrintBoard(gameBoard);
-    updateGameView(gameBoard);
 
     debugPrintString("Game initialized successfully!\r\n");
 }
@@ -160,7 +181,6 @@ void handleInputDirection(int direction)
 
         debugPrintGameState(currentGameState);
         debugPrintBoard(gameBoard);
-        updateGameView(gameBoard);
     }
     else
     {
@@ -189,6 +209,7 @@ static bool compressAndMergeRowLeft(int row[BOARD_SIZE])
         if (temp[i] != 0 && temp[i] == temp[i + 1])
         {
             temp[i] *= 2;
+            score += temp[i];
             temp[i + 1] = 0;
             moved = true;
         }
@@ -313,14 +334,16 @@ void spawnRandomTile(int board[BOARD_SIZE][BOARD_SIZE])
     // If there are empty cells, randomly select one
     if (count > 0)
     {
-        // Index of the randomly chosen empty cell
-        int idx = fakeRand() % count;
+        // Index of the randomly chosen empty cell - SỬ DỤNG LCG
+        int idx = (int)(customRand() % count);
 
         int i = emptyCells[idx][0];
         int j = emptyCells[idx][1];
 
-        // Assign the value 2 or 4 (90% chance of 2)
-        board[i][j] = (fakeRand() < 9) ? 2 : 4;
+        // Assign the value 2 or 4 (90% chance of 2, 10% chance of 4)
+        uint32_t randValue = customRand() % 100;
+        board[i][j] = (randValue < 90) ? 2 : 4;
+        shouldUpdate = true;
 
         // Debug output
         debugPrintString("New tile spawned: ");
@@ -428,7 +451,7 @@ bool canMerge(int board[BOARD_SIZE][BOARD_SIZE])
     return mergeCount > 0;
 }
 
-GameState getGameState(void)
+int (*getGameBoard(void))[BOARD_SIZE]
 {
-    return currentGameState;
+    return gameBoard;
 }

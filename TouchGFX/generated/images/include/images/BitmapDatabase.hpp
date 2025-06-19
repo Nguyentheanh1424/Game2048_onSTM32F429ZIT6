@@ -6,12 +6,13 @@
 #include <touchgfx/hal/Types.hpp>
 #include <touchgfx/Bitmap.hpp>
 
-const uint16_t BITMAP_BACKGROUND_ID = 0;
-const uint16_t BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID = 1;
-const uint16_t BITMAP_LOGO_ID = 2;
-const uint16_t BITMAP_NEWGAMEBTN_ID = 3;
-const uint16_t BITMAP_SQUARE8X8_ID = 4;
-const uint16_t BITMAP_TITLE_ID = 5;
+const uint16_t BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUNDED_NORMAL_ID = 0;
+const uint16_t BITMAP_BACKGROUND_ID = 1;
+const uint16_t BITMAP_ICON_THEME_IMAGES_ACTION_DONE_50_50_E8F6FB_SVG_ID = 2;
+const uint16_t BITMAP_LOGO_ID = 3;
+const uint16_t BITMAP_NEWGAMEBTN_ID = 4;
+const uint16_t BITMAP_SQUARE8X8_ID = 5;
+const uint16_t BITMAP_TITLE_ID = 6;
 
 namespace BitmapDatabase
 {

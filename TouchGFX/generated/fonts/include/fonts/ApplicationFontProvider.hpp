@@ -17,15 +17,21 @@ struct Typography
     static const touchgfx::FontId LARGE = 1;
     static const touchgfx::FontId SMALL = 2;
     static const touchgfx::FontId CUSTOM = 3;
+    static const touchgfx::FontId GAMEOVER = 4;
+    static const touchgfx::FontId NEWGAME = 5;
+    static const touchgfx::FontId SCORE = 6;
 };
 
 struct TypographyFontIndex
 {
-    static const touchgfx::FontId DEFAULT = 0; // verdana_10_4bpp
-    static const touchgfx::FontId LARGE = 1;   // verdana_40_4bpp
-    static const touchgfx::FontId SMALL = 0;   // verdana_10_4bpp
-    static const touchgfx::FontId CUSTOM = 2;  // verdanab_14_4bpp
-    static const uint16_t NUMBER_OF_FONTS = 3;
+    static const touchgfx::FontId DEFAULT = 0;  // verdana_10_4bpp
+    static const touchgfx::FontId LARGE = 1;    // verdanab_35_4bpp
+    static const touchgfx::FontId SMALL = 0;    // verdana_10_4bpp
+    static const touchgfx::FontId CUSTOM = 2;   // verdanab_14_4bpp
+    static const touchgfx::FontId GAMEOVER = 3; // verdanab_27_4bpp
+    static const touchgfx::FontId NEWGAME = 4;  // verdanab_15_4bpp
+    static const touchgfx::FontId SCORE = 5;    // verdanab_10_4bpp
+    static const uint16_t NUMBER_OF_FONTS = 6;
 };
 
 class ApplicationFontProvider : public touchgfx::FontProvider

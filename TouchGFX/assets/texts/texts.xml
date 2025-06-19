@@ -55,12 +55,34 @@
         <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
       </Text>
     </TextGroup>
-    <TextGroup Id="Unsorted" />
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_1BDR" Alignment="Left" TypographyId="Score">
+        <Translation Language="GB">Best Score: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_0PL8" Alignment="Left" TypographyId="Score">
+        <Translation Language="GB">Score: &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_60P1" Alignment="Center" TypographyId="NewGame">
+        <Translation Language="GB">New Game</Translation>
+      </Text>
+      <Text Id="__SingleUse_UPPK" Alignment="Center" TypographyId="NewGame">
+        <Translation Language="GB">New Game</Translation>
+      </Text>
+      <Text Id="__SingleUse_N9NK" Alignment="Left" TypographyId="GameOver">
+        <Translation Language="GB">Game Over!</Translation>
+      </Text>
+      <Text Id="__SingleUse_S3O2" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB">You Win!</Translation>
+      </Text>
+    </TextGroup>
   </Texts>
   <Typographies>
     <Typography Id="Default" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
-    <Typography Id="Large" Font="verdana.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Large" Font="verdanab.ttf" Size="35" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="?" />
     <Typography Id="Small" Font="verdana.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="Custom" Font="verdanab.ttf" Size="14" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="0123456789" />
+    <Typography Id="GameOver" Font="verdanab.ttf" Size="27" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="NewGame" Font="verdanab.ttf" Size="15" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Score" Font="verdanab.ttf" Size="10" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>
