@@ -25,6 +25,10 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "Components/ili9341/ili9341.h"
+#include "gameOverAudioCode.h"
+#include "gameStartAudioCode.h"
+#include "slideAudioCode.h"
+#include "victoryAudioCode.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -68,6 +72,9 @@ DMA2D_HandleTypeDef hdma2d;
 
 I2C_HandleTypeDef hi2c3;
 
+I2S_HandleTypeDef hi2s3;
+DMA_HandleTypeDef hdma_spi3_tx;
+
 LTDC_HandleTypeDef hltdc;
 
 RTC_HandleTypeDef hrtc;
@@ -94,11 +101,15 @@ const osThreadAttr_t GUI_Task_attributes = {
 };
 /* USER CODE BEGIN PV */
 uint8_t isRevD = 0; /* Applicable only for STM32F429I DISCOVERY REVD and above */
+static const unsigned short* current_audio_buffer = NULL;
+static uint32_t      current_audio_len    = 0;
+volatile uint8_t     audio_playing        = 0;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
+static void MX_DMA_Init(void);
 static void MX_CRC_Init(void);
 static void MX_I2C3_Init(void);
 static void MX_SPI5_Init(void);
@@ -107,6 +118,7 @@ static void MX_LTDC_Init(void);
 static void MX_DMA2D_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_RTC_Init(void);
+static void MX_I2S3_Init(void);
 void StartDefaultTask(void *argument);
 extern void TouchGFX_Task(void *argument);
 
@@ -147,6 +159,46 @@ static LCD_DrvTypeDef* LcdDrv;
 
 uint32_t I2c3Timeout = I2C3_TIMEOUT_MAX; /*<! Value of Timeout when I2C communication fails */
 uint32_t Spi5Timeout = SPI5_TIMEOUT_MAX; /*<! Value of Timeout when SPI communication fails */
+
+void HAL_I2S_TxCpltCallback(I2S_HandleTypeDef *hi2s3)
+{
+    if (hi2s3->Instance == SPI3) {
+        audio_playing = 0;
+    }
+}
+
+void playAudio(int action)
+{
+    if (audio_playing) return;
+
+    switch(action)
+    {
+      case 0:
+        current_audio_buffer = gameOverAudioCode;
+        current_audio_len    = GAME_OVER_SAMPLES;
+        break;
+
+      case 1:
+        current_audio_buffer = gameStartAudioCode;
+        current_audio_len    = GAME_START_SAMPLES;
+        break;
+
+      case 2:
+        current_audio_buffer = slideAudioCode;
+        current_audio_len    = SLIDE_SAMPLES;
+        break;
+
+      case 3:
+		  current_audio_buffer = victoryAudioCode;
+		  current_audio_len    = VICTORY_SAMPLES;
+		  break;
+    }
+
+    audio_playing = 1;
+    HAL_I2S_Transmit_DMA(&hi2s3,
+                        (uint16_t*)current_audio_buffer,
+                        current_audio_len);
+}
 /* USER CODE END 0 */
 
 /**
@@ -179,6 +231,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_CRC_Init();
   MX_I2C3_Init();
   MX_SPI5_Init();
@@ -187,6 +240,7 @@ int main(void)
   MX_DMA2D_Init();
   MX_USART1_UART_Init();
   MX_RTC_Init();
+  MX_I2S3_Init();
   MX_TouchGFX_Init();
   /* Call PreOsInit function */
   MX_TouchGFX_PreOSInit();
@@ -409,6 +463,40 @@ static void MX_I2C3_Init(void)
 }
 
 /**
+  * @brief I2S3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_I2S3_Init(void)
+{
+
+  /* USER CODE BEGIN I2S3_Init 0 */
+
+  /* USER CODE END I2S3_Init 0 */
+
+  /* USER CODE BEGIN I2S3_Init 1 */
+
+  /* USER CODE END I2S3_Init 1 */
+  hi2s3.Instance = SPI3;
+  hi2s3.Init.Mode = I2S_MODE_MASTER_TX;
+  hi2s3.Init.Standard = I2S_STANDARD_PHILIPS;
+  hi2s3.Init.DataFormat = I2S_DATAFORMAT_16B;
+  hi2s3.Init.MCLKOutput = I2S_MCLKOUTPUT_DISABLE;
+  hi2s3.Init.AudioFreq = I2S_AUDIOFREQ_48K;
+  hi2s3.Init.CPOL = I2S_CPOL_LOW;
+  hi2s3.Init.ClockSource = I2S_CLOCK_PLL;
+  hi2s3.Init.FullDuplexMode = I2S_FULLDUPLEXMODE_DISABLE;
+  if (HAL_I2S_Init(&hi2s3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN I2S3_Init 2 */
+
+  /* USER CODE END I2S3_Init 2 */
+
+}
+
+/**
   * @brief LTDC Initialization Function
   * @param None
   * @retval None
@@ -590,6 +678,22 @@ static void MX_USART1_UART_Init(void)
   /* USER CODE BEGIN USART1_Init 2 */
 
   /* USER CODE END USART1_Init 2 */
+
+}
+
+/**
+  * Enable DMA controller clock
+  */
+static void MX_DMA_Init(void)
+{
+
+  /* DMA controller clock enable */
+  __HAL_RCC_DMA1_CLK_ENABLE();
+
+  /* DMA interrupt init */
+  /* DMA1_Stream5_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream5_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream5_IRQn);
 
 }
 

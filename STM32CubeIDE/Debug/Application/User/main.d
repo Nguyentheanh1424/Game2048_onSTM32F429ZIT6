@@ -29,6 +29,8 @@ Application/User/main.o: C:/TouchGFXProjects/Game2048/Core/Src/main.c \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h \
+ ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s.h \
+ ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s_ex.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
@@ -52,7 +54,11 @@ Application/User/main.o: C:/TouchGFXProjects/Game2048/Core/Src/main.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os2.h \
  ../../TouchGFX/App/app_touchgfx.h \
  ../../Drivers/BSP/Components/ili9341/ili9341.h \
- ../../Drivers/BSP/Components/ili9341/../Common/lcd.h
+ ../../Drivers/BSP/Components/ili9341/../Common/lcd.h \
+ C:/TouchGFXProjects/Game2048/STM32CubeIDE/Application/User/gameOverAudioCode.h \
+ C:/TouchGFXProjects/Game2048/STM32CubeIDE/Application/User/gameStartAudioCode.h \
+ C:/TouchGFXProjects/Game2048/STM32CubeIDE/Application/User/slideAudioCode.h \
+ C:/TouchGFXProjects/Game2048/STM32CubeIDE/Application/User/victoryAudioCode.h
 ../../Core/Inc/main.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../../Core/Inc/stm32f4xx_hal_conf.h:
@@ -83,6 +89,8 @@ Application/User/main.o: C:/TouchGFXProjects/Game2048/Core/Src/main.c \
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h:
+../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s.h:
+../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s_ex.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h:
@@ -107,3 +115,7 @@ Application/User/main.o: C:/TouchGFXProjects/Game2048/Core/Src/main.c \
 ../../TouchGFX/App/app_touchgfx.h:
 ../../Drivers/BSP/Components/ili9341/ili9341.h:
 ../../Drivers/BSP/Components/ili9341/../Common/lcd.h:
+C:/TouchGFXProjects/Game2048/STM32CubeIDE/Application/User/gameOverAudioCode.h:
+C:/TouchGFXProjects/Game2048/STM32CubeIDE/Application/User/gameStartAudioCode.h:
+C:/TouchGFXProjects/Game2048/STM32CubeIDE/Application/User/slideAudioCode.h:
+C:/TouchGFXProjects/Game2048/STM32CubeIDE/Application/User/victoryAudioCode.h:

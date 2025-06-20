@@ -16,6 +16,7 @@ extern "C" {
     extern int LoadBestScore(void);
     extern int (*getGameBoard(void))[BOARD_SIZE];
     extern void initGame();
+    extern void playAudio(int currentGameState);
 }
 
 GameScreenView::GameScreenView()
@@ -86,18 +87,21 @@ void GameScreenView::NewGame()
 
 	flagContinue = false;
 
+	playAudio(1);
 	initGame();
 }
 
 void GameScreenView::WinGame()
 {
 	winGame.setVisible(true);
+	playAudio(3);
 	winGame.invalidate();
 }
 
 void GameScreenView::GameOver()
 {
 	gameOver.setVisible(true);
+	playAudio(0);
 	gameOver.invalidate();
 }
 

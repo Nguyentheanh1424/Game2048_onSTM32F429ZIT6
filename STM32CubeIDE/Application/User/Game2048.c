@@ -24,6 +24,7 @@ int score = 0;
 extern RTC_HandleTypeDef hrtc;
 extern UART_HandleTypeDef huart1;
 extern volatile bool shouldUpdate;
+extern void playAudio(int action);
 
 // ========== LCG RANDOM IMPLEMENTATION ==========
 static uint32_t randSeed = 1;
@@ -85,6 +86,7 @@ void handleInputDirection(int direction)
 
     if (moved)
     {
+    	playAudio(2);
         spawnRandomTile(gameBoard);
 
         // Check win condition
