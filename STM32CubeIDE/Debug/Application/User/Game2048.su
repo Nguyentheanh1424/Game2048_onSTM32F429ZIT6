@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ../Application/User/Game2048.c:104:13:compressAndMergeRowLeft	16	static
 ../Application/User/Game2048.c:32:6:initRandom	8	static
 ../Application/User/Game2048.c:41:10:customRand	0	static
@@ -16,3 +17,24 @@
 ../Application/User/Game2048.c:303:6:SaveBestScore	0	static
 ../Application/User/Game2048.c:308:5:LoadBestScore	0	static
 ../Application/User/Game2048.c:314:7:getGameBoard	0	static
+=======
+../Application/User/Game2048.c:106:13:compressAndMergeRowLeft	16	static
+../Application/User/Game2048.c:32:6:initRandom	8	static
+../Application/User/Game2048.c:41:10:customRand	0	static
+../Application/User/Game2048.c:48:5:betterRand	8	static
+../Application/User/Game2048.c:138:6:moveLeft	16	static
+../Application/User/Game2048.c:151:6:moveRight	32	static
+../Application/User/Game2048.c:175:6:moveUp	32	static
+../Application/User/Game2048.c:195:6:moveDown	32	static
+../Application/User/Game2048.c:215:6:spawnRandomTile	152	static
+../Application/User/Game2048.c:247:6:spawnRandomTilesNTimes	16	static
+../Application/User/Game2048.c:53:6:initGame	8	static
+../Application/User/Game2048.c:256:6:checkWin	0	static
+../Application/User/Game2048.c:287:6:hasEmptyCell	0	static
+../Application/User/Game2048.c:296:6:canMerge	12	static
+../Application/User/Game2048.c:271:6:checkGameOver	8	static
+../Application/User/Game2048.c:70:6:handleInputDirection	8	static
+../Application/User/Game2048.c:313:6:SaveBestScore	0	static
+../Application/User/Game2048.c:318:5:LoadBestScore	0	static
+../Application/User/Game2048.c:324:7:getGameBoard	0	static
+>>>>>>> main
