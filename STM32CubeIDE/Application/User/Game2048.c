@@ -17,6 +17,7 @@
 #define BEST_SCORE_BKP_REG RTC_BKP_DR0
 
 bool flagContinue = false;
+bool pause = false;
 int gameBoard[BOARD_SIZE][BOARD_SIZE] = {0};
 int currentGameState = GAME_PLAYING;
 int score = 0;
@@ -52,6 +53,7 @@ int betterRand(void)
 void initGame(void)
 {
     score = 0;
+    pause = false;
 
     initRandom();
 
@@ -62,8 +64,7 @@ void initGame(void)
 
     currentGameState = GAME_PLAYING;
 
-    spawnRandomTile(gameBoard);
-    spawnRandomTile(gameBoard);
+    spawnRandomTilesNTimes(2, gameBoard);
 }
 
 void handleInputDirection(int direction)
@@ -75,17 +76,20 @@ void handleInputDirection(int direction)
 
     bool moved = false;
 
-    switch(direction)
+    if (!pause)
     {
-        case 0: moved = moveLeft(gameBoard); break;
-        case 1: moved = moveRight(gameBoard); break;
-        case 2: moved = moveUp(gameBoard); break;
-        case 3: moved = moveDown(gameBoard); break;
+    	switch(direction)
+		{
+			case 0: moved = moveLeft(gameBoard); break;
+			case 1: moved = moveRight(gameBoard); break;
+			case 2: moved = moveUp(gameBoard); break;
+			case 3: moved = moveDown(gameBoard); break;
+		}
     }
 
     if (moved)
     {
-        spawnRandomTile(gameBoard);
+    	spawnRandomTilesNTimes(2, gameBoard);
 
         // Check win condition
         if (currentGameState == GAME_PLAYING && checkWin(gameBoard)) {
@@ -237,8 +241,16 @@ void spawnRandomTile(int board[BOARD_SIZE][BOARD_SIZE])
         // Assign the value 2 or 4 (90% chance of 2, 10% chance of 4)
         uint32_t randValue = customRand() % 100;
         board[i][j] = (randValue < 90) ? 2 : 4;
-        shouldUpdate = true;
     }
+}
+
+void spawnRandomTilesNTimes(int numberTile, int board[BOARD_SIZE][BOARD_SIZE])
+{
+	while (numberTile--)
+	{
+		spawnRandomTile(board);
+	}
+	shouldUpdate = true;
 }
 
 bool checkWin(int board[BOARD_SIZE][BOARD_SIZE])

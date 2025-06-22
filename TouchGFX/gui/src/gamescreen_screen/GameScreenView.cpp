@@ -11,6 +11,7 @@ extern "C" {
     extern int currentGameState;
     extern int score;
     extern bool flagContinue;
+    extern bool pause;
 
     extern void SaveBestScore(int score);
     extern int LoadBestScore(void);
@@ -93,12 +94,14 @@ void GameScreenView::WinGame()
 {
 	winGame.setVisible(true);
 	winGame.invalidate();
+	pause = true;
 }
 
 void GameScreenView::GameOver()
 {
 	gameOver.setVisible(true);
 	gameOver.invalidate();
+	pause = true;
 }
 
 void GameScreenView::Continue()
@@ -107,6 +110,7 @@ void GameScreenView::Continue()
 	winGame.invalidate();
 	flagContinue = true;
 	currentGameState = 0;
+	pause = false;
 }
 
 void GameScreenView::updateScore(int currentScore)
