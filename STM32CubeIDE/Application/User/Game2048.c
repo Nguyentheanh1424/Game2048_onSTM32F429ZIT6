@@ -18,13 +18,14 @@
 
 bool flagContinue = false;
 bool pause = false;
-int gameBoard[BOARD_SIZE][BOARD_SIZE] = {0};
+int gameBoard[BOARD_SIZE][BOARD_SIZE] = { 0 };
 int currentGameState = GAME_PLAYING;
 int score = 0;
 
 extern RTC_HandleTypeDef hrtc;
 extern UART_HandleTypeDef huart1;
 extern volatile bool shouldUpdate;
+extern void playAudio(int action);
 
 // ========== LCG RANDOM IMPLEMENTATION ==========
 static uint32_t randSeed = 1;
@@ -78,18 +79,19 @@ void handleInputDirection(int direction)
 
     if (!pause)
     {
-    	switch(direction)
-		{
-			case 0: moved = moveLeft(gameBoard); break;
-			case 1: moved = moveRight(gameBoard); break;
-			case 2: moved = moveUp(gameBoard); break;
-			case 3: moved = moveDown(gameBoard); break;
-		}
+        switch (direction)
+        {
+        case 0: moved = moveLeft(gameBoard); break;
+        case 1: moved = moveRight(gameBoard); break;
+        case 2: moved = moveUp(gameBoard); break;
+        case 3: moved = moveDown(gameBoard); break;
+        }
     }
 
     if (moved)
     {
-    	spawnRandomTilesNTimes(2, gameBoard);
+        playAudio(2);
+        spawnRandomTilesNTimes(2, gameBoard);
 
         // Check win condition
         if (currentGameState == GAME_PLAYING && checkWin(gameBoard)) {
@@ -113,12 +115,14 @@ static bool compressAndMergeRowLeft(int row[BOARD_SIZE])
 
         if (last == 0) {
             last = row[i];
-        } else if (last == row[i]) {
+        }
+        else if (last == row[i]) {
             row[insertPos++] = last * 2;
             score += last * 2;
             last = 0;
             moved = true;
-        } else {
+        }
+        else {
             row[insertPos++] = last;
             last = row[i];
         }
@@ -158,7 +162,7 @@ bool moveRight(int board[BOARD_SIZE][BOARD_SIZE])
 
         // Reverse the row
         for (int j = 0; j < BOARD_SIZE; j++)
-            reversed[j] = board[i][(BOARD_SIZE-1)-j];
+            reversed[j] = board[i][(BOARD_SIZE - 1) - j];
 
         // Process the reversed row (FIXED BUG)
         if (compressAndMergeRowLeft(reversed))
@@ -166,7 +170,7 @@ bool moveRight(int board[BOARD_SIZE][BOARD_SIZE])
 
         // Reverse back and assign to board
         for (int j = 0; j < BOARD_SIZE; j++)
-            board[i][(BOARD_SIZE - 1)-j] = reversed[j];
+            board[i][(BOARD_SIZE - 1) - j] = reversed[j];
     }
 
     return moved;
@@ -214,7 +218,7 @@ bool moveDown(int board[BOARD_SIZE][BOARD_SIZE])
 
 void spawnRandomTile(int board[BOARD_SIZE][BOARD_SIZE])
 {
-    int emptyCells[BOARD_SIZE*BOARD_SIZE][2];
+    int emptyCells[BOARD_SIZE * BOARD_SIZE][2];
     int count = 0;
 
     // Traverse the entire board to find empty cells
@@ -246,11 +250,11 @@ void spawnRandomTile(int board[BOARD_SIZE][BOARD_SIZE])
 
 void spawnRandomTilesNTimes(int numberTile, int board[BOARD_SIZE][BOARD_SIZE])
 {
-	while (numberTile--)
-	{
-		spawnRandomTile(board);
-	}
-	shouldUpdate = true;
+    while (numberTile--)
+    {
+        spawnRandomTile(board);
+    }
+    shouldUpdate = true;
 }
 
 bool checkWin(int board[BOARD_SIZE][BOARD_SIZE])
@@ -261,7 +265,7 @@ bool checkWin(int board[BOARD_SIZE][BOARD_SIZE])
         {
             if (board[i][j] >= WIN_TILE)
             {
-                return (true & !flagContinue) ;
+                return (true & !flagContinue);
             }
         }
     }
@@ -299,13 +303,13 @@ bool canMerge(int board[BOARD_SIZE][BOARD_SIZE])
     for (int i = 0; i < BOARD_SIZE; i++)
         for (int j = 0; j < BOARD_SIZE - 1; j++)
             if (board[i][j] == board[i][j + 1] && board[i][j] != 0)
-            	return true;
+                return true;
 
     // Check vertical merges
     for (int i = 0; i < BOARD_SIZE - 1; i++)
         for (int j = 0; j < BOARD_SIZE; j++)
             if (board[i][j] == board[i + 1][j] && board[i][j] != 0)
-            	return true;
+                return true;
 
     return false;
 }
