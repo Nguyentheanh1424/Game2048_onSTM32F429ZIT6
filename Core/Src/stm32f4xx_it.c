@@ -45,6 +45,7 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
 volatile bool shouldUpdate = false;
+extern bool pause;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -271,7 +272,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
 	static uint32_t last_press = 0;
 		uint32_t current_time = HAL_GetTick();
-		if (current_time - last_press > 200)
+		if ((current_time - last_press > 200) && !pause)
 		{
 			if (GPIO_Pin == LEFT_Pin)
 			{

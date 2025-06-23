@@ -60,14 +60,14 @@ void GameScreenView::handleTickEvent()
 			{
 	    		case 1:
 	    			WinGame();
-	    			playAudio(2);
+	    			playAudio(3);
 	    			break;
 	    		case 2:
 	    			GameOver();
 	    			playAudio(0);
 	    			break;
 	    		default:
-	    			playAudio(1);
+	    			playAudio(2);
 	    			break;
 			}
 	        int (*board)[BOARD_SIZE] = getGameBoard();

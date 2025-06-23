@@ -15,6 +15,7 @@
 
 #define BOARD_SIZE 4
 #define BEST_SCORE_BKP_REG RTC_BKP_DR0
+#define SPAWN 4
 
 bool flagContinue = false;
 bool pause = false;
@@ -65,7 +66,7 @@ void initGame(void)
 
     currentGameState = GAME_PLAYING;
 
-    spawnRandomTilesNTimes(4, gameBoard);
+    spawnRandomTilesNTimes(SPAWN, gameBoard);
 }
 
 void handleInputDirection(int direction)
@@ -77,21 +78,18 @@ void handleInputDirection(int direction)
 
     bool moved = false;
 
-    if (!pause)
-    {
-        switch (direction)
-        {
-        case 0: moved = moveLeft(gameBoard); break;
-        case 1: moved = moveRight(gameBoard); break;
-        case 2: moved = moveUp(gameBoard); break;
-        case 3: moved = moveDown(gameBoard); break;
-        }
-    }
+	switch (direction)
+	{
+		case 0: moved = moveLeft(gameBoard); break;
+		case 1: moved = moveRight(gameBoard); break;
+		case 2: moved = moveUp(gameBoard); break;
+		case 3: moved = moveDown(gameBoard); break;
+	}
 
     if (moved)
     {
 //        playAudio(2);
-        spawnRandomTilesNTimes(4, gameBoard);
+        spawnRandomTilesNTimes(SPAWN, gameBoard);
 
         // Check win condition
         if (currentGameState == GAME_PLAYING && checkWin(gameBoard)) {
