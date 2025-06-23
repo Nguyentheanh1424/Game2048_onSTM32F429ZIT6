@@ -4,7 +4,7 @@
 #include <stdbool.h>
 
 #define BOARD_SIZE 4
-#define WIN_TILE 2048
+#define WIN_TILE 32
 #define GAME_PLAYING 0
 #define GAME_WON     1
 #define GAME_OVER    2

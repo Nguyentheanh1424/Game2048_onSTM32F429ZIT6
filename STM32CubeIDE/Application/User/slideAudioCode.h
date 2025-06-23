@@ -11,7 +11,7 @@
 
 #define SLIDE_SAMPLES 1254
 
-unsigned short slideAudioCode[SLIDE_SAMPLES] = {
+const unsigned short slideAudioCode[SLIDE_SAMPLES] = {
 32767, 32766, 32768, 32767, 32765, 32764, 32771, 32771, /* 0-7 */
 32770, 32769, 32766, 32765, 32765, 32762, 32768, 32767, /* 8-15 */
 32767, 32769, 32768, 32766, 32768, 32768, 32767, 32769, /* 16-23 */
