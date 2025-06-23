@@ -22,8 +22,8 @@
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/MoveAnimator.hpp:37:7:touchgfx::MoveAnimator<touchgfx::Box>::~MoveAnimator()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:62:7:touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/FadeAnimator.hpp:41:7:touchgfx::FadeAnimator<touchgfx::TextAreaWithOneWildcard>::~FadeAnimator()	0	static
-C:/TouchGFXProjects/Game2048/TouchGFX/generated/gui_generated/src/containers/SquareContainerBase.cpp:241:1:SquareContainerBase::~SquareContainerBase()	0	static
-C:/TouchGFXProjects/Game2048/TouchGFX/generated/gui_generated/src/containers/SquareContainerBase.cpp:246:6:virtual void SquareContainerBase::initialize()	0	static
+C:/Users/Admin/Documents/He Nhung/Game2048_onSTM32F429ZIT6/TouchGFX/generated/gui_generated/src/containers/SquareContainerBase.cpp:241:1:SquareContainerBase::~SquareContainerBase()	0	static
+C:/Users/Admin/Documents/He Nhung/Game2048_onSTM32F429ZIT6/TouchGFX/generated/gui_generated/src/containers/SquareContainerBase.cpp:246:6:virtual void SquareContainerBase::initialize()	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/FadeAnimator.hpp:84:18:void touchgfx::FadeAnimator<T>::setFadeAnimationDelay(uint16_t) [with T = touchgfx::TextAreaWithOneWildcard]	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/FadeAnimator.hpp:96:22:uint16_t touchgfx::FadeAnimator<T>::getFadeAnimationDelay() const [with T = touchgfx::TextAreaWithOneWildcard]	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/MoveAnimator.hpp:88:18:void touchgfx::MoveAnimator<T>::setMoveAnimationDelay(uint16_t) [with T = touchgfx::Box]	0	static
@@ -32,7 +32,7 @@ C:/TouchGFXProjects/Game2048/TouchGFX/generated/gui_generated/src/containers/Squ
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:62:7:virtual touchgfx::TextAreaWithOneWildcard::~TextAreaWithOneWildcard()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/FadeAnimator.hpp:41:7:virtual touchgfx::FadeAnimator<touchgfx::TextAreaWithOneWildcard>::~FadeAnimator()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/MoveAnimator.hpp:37:7:virtual touchgfx::MoveAnimator<touchgfx::Box>::~MoveAnimator()	8	static
-C:/TouchGFXProjects/Game2048/TouchGFX/generated/gui_generated/src/containers/SquareContainerBase.cpp:241:1:virtual SquareContainerBase::~SquareContainerBase()	8	static
+C:/Users/Admin/Documents/He Nhung/Game2048_onSTM32F429ZIT6/TouchGFX/generated/gui_generated/src/containers/SquareContainerBase.cpp:241:1:virtual SquareContainerBase::~SquareContainerBase()	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Drawable.hpp:121:18:virtual void touchgfx::Drawable::invalidateContent() const	0	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/Box.hpp:97:18:virtual void touchgfx::Box::invalidateContent() const	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:43:18:virtual void touchgfx::TextAreaWithWildcardBase::invalidateContent() const	8	static
@@ -48,4 +48,4 @@ C:/TouchGFXProjects/Game2048/TouchGFX/generated/gui_generated/src/containers/Squ
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/widgets/TextAreaWithWildcard.hpp:49:36:virtual touchgfx::TextArea::BoundingArea touchgfx::TextAreaWithWildcardBase::calculateBoundingArea() const	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/MoveAnimator.hpp:40:5:touchgfx::MoveAnimator<T>::MoveAnimator() [with T = touchgfx::Box]	8	static
 ../../Middlewares/ST/touchgfx/framework/include/touchgfx/mixins/FadeAnimator.hpp:44:5:touchgfx::FadeAnimator<T>::FadeAnimator() [with T = touchgfx::TextAreaWithOneWildcard]	16	static
-C:/TouchGFXProjects/Game2048/TouchGFX/generated/gui_generated/src/containers/SquareContainerBase.cpp:8:1:SquareContainerBase::SquareContainerBase()	264	static
+C:/Users/Admin/Documents/He Nhung/Game2048_onSTM32F429ZIT6/TouchGFX/generated/gui_generated/src/containers/SquareContainerBase.cpp:8:1:SquareContainerBase::SquareContainerBase()	264	static

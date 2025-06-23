@@ -1,5 +1,5 @@
 Application/User/generated/CachedFont.o: \
- C:/TouchGFXProjects/Game2048/TouchGFX/generated/fonts/src/CachedFont.cpp \
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/TouchGFX/generated/fonts/src/CachedFont.cpp \
  ../../TouchGFX/generated/fonts/include/fonts/CachedFont.hpp \
  ../../TouchGFX/generated/fonts/include/fonts/FontCache.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \

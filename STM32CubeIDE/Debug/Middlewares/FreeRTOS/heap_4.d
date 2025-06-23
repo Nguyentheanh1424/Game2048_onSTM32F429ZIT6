@@ -1,5 +1,5 @@
 Middlewares/FreeRTOS/heap_4.o: \
- C:/TouchGFXProjects/Game2048/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c \
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \

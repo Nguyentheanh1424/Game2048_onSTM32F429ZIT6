@@ -1,5 +1,5 @@
 Application/User/generated/BitmapDatabase.o: \
- C:/TouchGFXProjects/Game2048/TouchGFX/generated/images/src/BitmapDatabase.cpp \
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/TouchGFX/generated/images/src/BitmapDatabase.cpp \
  ../../TouchGFX/generated/images/include/images/BitmapDatabase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Config.hpp \

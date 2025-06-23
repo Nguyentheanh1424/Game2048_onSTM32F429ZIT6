@@ -1,5 +1,5 @@
 Application/User/generated/ApplicationFontProvider.o: \
- C:/TouchGFXProjects/Game2048/TouchGFX/generated/fonts/src/ApplicationFontProvider.cpp \
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/TouchGFX/generated/fonts/src/ApplicationFontProvider.cpp \
  ../../TouchGFX/generated/fonts/include/fonts/ApplicationFontProvider.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/FontManager.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \

@@ -1,5 +1,5 @@
 Application/User/TouchGFX/target/TouchGFXHAL.o: \
- C:/TouchGFXProjects/Game2048/TouchGFX/target/TouchGFXHAL.cpp \
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/TouchGFX/target/TouchGFXHAL.cpp \
  ../../TouchGFX/target/TouchGFXHAL.hpp \
  ../../TouchGFX/target/generated/TouchGFXGeneratedHAL.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/HAL.hpp \

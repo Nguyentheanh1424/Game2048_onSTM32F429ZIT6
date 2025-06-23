@@ -1,4 +1,5 @@
-Application/User/main.o: C:/TouchGFXProjects/Game2048/Core/Src/main.c \
+Application/User/main.o: \
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/Core/Src/main.c \
  ../../Core/Inc/main.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../../Core/Inc/stm32f4xx_hal_conf.h \
@@ -55,10 +56,10 @@ Application/User/main.o: C:/TouchGFXProjects/Game2048/Core/Src/main.c \
  ../../TouchGFX/App/app_touchgfx.h \
  ../../Drivers/BSP/Components/ili9341/ili9341.h \
  ../../Drivers/BSP/Components/ili9341/../Common/lcd.h \
- C:/TouchGFXProjects/Game2048/STM32CubeIDE/Application/User/gameOverAudioCode.h \
- C:/TouchGFXProjects/Game2048/STM32CubeIDE/Application/User/gameStartAudioCode.h \
- C:/TouchGFXProjects/Game2048/STM32CubeIDE/Application/User/slideAudioCode.h \
- C:/TouchGFXProjects/Game2048/STM32CubeIDE/Application/User/victoryAudioCode.h
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/STM32CubeIDE/Application/User/gameOverAudioCode.h \
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/STM32CubeIDE/Application/User/gameStartAudioCode.h \
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/STM32CubeIDE/Application/User/slideAudioCode.h \
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/STM32CubeIDE/Application/User/victoryAudioCode.h
 ../../Core/Inc/main.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../../Core/Inc/stm32f4xx_hal_conf.h:
@@ -115,7 +116,7 @@ Application/User/main.o: C:/TouchGFXProjects/Game2048/Core/Src/main.c \
 ../../TouchGFX/App/app_touchgfx.h:
 ../../Drivers/BSP/Components/ili9341/ili9341.h:
 ../../Drivers/BSP/Components/ili9341/../Common/lcd.h:
-C:/TouchGFXProjects/Game2048/STM32CubeIDE/Application/User/gameOverAudioCode.h:
-C:/TouchGFXProjects/Game2048/STM32CubeIDE/Application/User/gameStartAudioCode.h:
-C:/TouchGFXProjects/Game2048/STM32CubeIDE/Application/User/slideAudioCode.h:
-C:/TouchGFXProjects/Game2048/STM32CubeIDE/Application/User/victoryAudioCode.h:
+C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/STM32CubeIDE/Application/User/gameOverAudioCode.h:
+C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/STM32CubeIDE/Application/User/gameStartAudioCode.h:
+C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/STM32CubeIDE/Application/User/slideAudioCode.h:
+C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/STM32CubeIDE/Application/User/victoryAudioCode.h:

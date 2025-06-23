@@ -60,10 +60,14 @@ void GameScreenView::handleTickEvent()
 			{
 	    		case 1:
 	    			WinGame();
+	    			playAudio(2);
 	    			break;
-
 	    		case 2:
 	    			GameOver();
+	    			playAudio(0);
+	    			break;
+	    		default:
+	    			playAudio(1);
 	    			break;
 			}
 	        int (*board)[BOARD_SIZE] = getGameBoard();
@@ -95,7 +99,6 @@ void GameScreenView::NewGame()
 void GameScreenView::WinGame()
 {
 	winGame.setVisible(true);
-	playAudio(3);
 	winGame.invalidate();
 	pause = true;
 }
@@ -103,7 +106,6 @@ void GameScreenView::WinGame()
 void GameScreenView::GameOver()
 {
 	gameOver.setVisible(true);
-	playAudio(0);
 	gameOver.invalidate();
 	pause = true;
 }

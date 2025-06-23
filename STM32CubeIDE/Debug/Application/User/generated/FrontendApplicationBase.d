@@ -1,5 +1,5 @@
 Application/User/generated/FrontendApplicationBase.o: \
- C:/TouchGFXProjects/Game2048/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp \
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/TouchGFX/generated/gui_generated/src/common/FrontendApplicationBase.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/mvp/MVPApplication.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/common/AbstractPartition.hpp \

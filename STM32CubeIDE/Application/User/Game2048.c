@@ -65,7 +65,7 @@ void initGame(void)
 
     currentGameState = GAME_PLAYING;
 
-    spawnRandomTilesNTimes(2, gameBoard);
+    spawnRandomTilesNTimes(4, gameBoard);
 }
 
 void handleInputDirection(int direction)
@@ -90,8 +90,8 @@ void handleInputDirection(int direction)
 
     if (moved)
     {
-        playAudio(2);
-        spawnRandomTilesNTimes(2, gameBoard);
+//        playAudio(2);
+        spawnRandomTilesNTimes(4, gameBoard);
 
         // Check win condition
         if (currentGameState == GAME_PLAYING && checkWin(gameBoard)) {

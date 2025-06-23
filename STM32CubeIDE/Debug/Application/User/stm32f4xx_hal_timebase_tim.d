@@ -1,5 +1,5 @@
 Application/User/stm32f4xx_hal_timebase_tim.o: \
- C:/TouchGFXProjects/Game2048/Core/Src/stm32f4xx_hal_timebase_tim.c \
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/Core/Src/stm32f4xx_hal_timebase_tim.c \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../../Core/Inc/stm32f4xx_hal_conf.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
