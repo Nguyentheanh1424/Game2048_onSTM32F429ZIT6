@@ -1,5 +1,5 @@
 Application/User/stm32f4xx_it.o: \
- C:/TouchGFXProjects/Game2048/Core/Src/stm32f4xx_it.c \
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/Core/Src/stm32f4xx_it.c \
  ../../Core/Inc/main.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../../Core/Inc/stm32f4xx_hal_conf.h \
@@ -43,7 +43,7 @@ Application/User/stm32f4xx_it.o: \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
  ../../Core/Inc/stm32f4xx_it.h \
- C:/TouchGFXProjects/Game2048/STM32CubeIDE/Application/User/Game2048.h
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/STM32CubeIDE/Application/User/Game2048.h
 ../../Core/Inc/main.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../../Core/Inc/stm32f4xx_hal_conf.h:
@@ -87,4 +87,4 @@ Application/User/stm32f4xx_it.o: \
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
 ../../Core/Inc/stm32f4xx_it.h:
-C:/TouchGFXProjects/Game2048/STM32CubeIDE/Application/User/Game2048.h:
+C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/STM32CubeIDE/Application/User/Game2048.h:

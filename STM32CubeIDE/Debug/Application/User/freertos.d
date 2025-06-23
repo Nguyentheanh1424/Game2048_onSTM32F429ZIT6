@@ -1,5 +1,5 @@
 Application/User/freertos.o: \
- C:/TouchGFXProjects/Game2048/Core/Src/freertos.c \
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/Core/Src/freertos.c \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  ../../Core/Inc/FreeRTOSConfig.h \
  ../../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \

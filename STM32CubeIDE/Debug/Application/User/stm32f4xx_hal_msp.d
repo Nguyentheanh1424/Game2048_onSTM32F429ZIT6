@@ -1,5 +1,5 @@
 Application/User/stm32f4xx_hal_msp.o: \
- C:/TouchGFXProjects/Game2048/Core/Src/stm32f4xx_hal_msp.c \
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/Core/Src/stm32f4xx_hal_msp.c \
  ../../Core/Inc/main.h \
  ../../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../../Core/Inc/stm32f4xx_hal_conf.h \

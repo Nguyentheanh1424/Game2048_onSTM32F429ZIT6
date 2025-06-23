@@ -1,5 +1,5 @@
 Application/User/generated/GameOverBase.o: \
- C:/TouchGFXProjects/Game2048/TouchGFX/generated/gui_generated/src/containers/GameOverBase.cpp \
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/TouchGFX/generated/gui_generated/src/containers/GameOverBase.cpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/containers/GameOverBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/common/FrontendApplicationBase.hpp \

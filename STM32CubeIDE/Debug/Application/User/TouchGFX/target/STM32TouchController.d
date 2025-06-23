@@ -1,5 +1,5 @@
 Application/User/TouchGFX/target/STM32TouchController.o: \
- C:/TouchGFXProjects/Game2048/TouchGFX/target/STM32TouchController.cpp \
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/TouchGFX/target/STM32TouchController.cpp \
  ../../TouchGFX/target/STM32TouchController.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/platform/driver/touch/TouchController.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \

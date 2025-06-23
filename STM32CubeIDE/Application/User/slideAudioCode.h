@@ -9,9 +9,9 @@
 * Bits/Sample:		16
 **********************************************************************/
 
-#define MOVE_SAMPLES 272
+#define SLIDE_SAMPLES 272
 
-const unsigned short moveAudioCode[MOVE_SAMPLES] = {
+const unsigned short slideAudioCode[SLIDE_SAMPLES] = {
 36000, 36050, 36100, 36150, 36200, 36250, 36300, 36350,
 36400, 36450, 36500, 36550, 36600, 36650, 36600, 36550,
 36500, 36450, 36400, 36350, 36300, 36250, 36200, 36150,

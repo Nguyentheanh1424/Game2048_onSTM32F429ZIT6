@@ -1,5 +1,5 @@
 Application/User/generated/Kerning_verdanab_27_4bpp.o: \
- C:/TouchGFXProjects/Game2048/TouchGFX/generated/fonts/src/Kerning_verdanab_27_4bpp.cpp \
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/TouchGFX/generated/fonts/src/Kerning_verdanab_27_4bpp.cpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Font.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/Unicode.hpp \
  ../../Middlewares/ST/touchgfx/framework/include/touchgfx/hal/Types.hpp \

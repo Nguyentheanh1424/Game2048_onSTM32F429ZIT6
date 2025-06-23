@@ -1,5 +1,5 @@
 Application/User/gui/GameScreenPresenter.o: \
- C:/TouchGFXProjects/Game2048/TouchGFX/gui/src/gamescreen_screen/GameScreenPresenter.cpp \
+ C:/Users/Admin/Documents/He\ Nhung/Game2048_onSTM32F429ZIT6/TouchGFX/gui/src/gamescreen_screen/GameScreenPresenter.cpp \
  ../../TouchGFX/gui/include/gui/gamescreen_screen/GameScreenView.hpp \
  ../../TouchGFX/generated/gui_generated/include/gui_generated/gamescreen_screen/GameScreenViewBase.hpp \
  ../../TouchGFX/gui/include/gui/common/FrontendApplication.hpp \
